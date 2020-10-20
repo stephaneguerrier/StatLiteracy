@@ -10,8 +10,8 @@ The linked slides (below) are `.html` files that will only work properly if you 
 
 *Note:* The slides were created with [`xaringan`](https://github.com/yihui/xaringan/wiki) in [R](cran.r-project.org) and the [template](https://github.com/edrubin/EC607S20) is based on the work of Dr. [Ed Rubin](https://edrub.in)
 
-**[Lecture: Introduction to Statistical Literacy 🤓 ](https://raw.githack.com/stephaneguerrier/StatLiteracy/master/slides.html)**
-
-**Note formats:** [.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/master/slides.html) |
-[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/master/slides.pdf) |
-[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/master/slides.Rmd)
+**[Lecture: Introduction to Statistical Literacy 🤓 ](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.html)**
+ 
+**Note formats:** [.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.html) |
+[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.pdf) |
+[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.Rmd)
