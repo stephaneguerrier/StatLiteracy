@@ -435,25 +435,25 @@ include_graphics("pics/sample_cin2.jpeg")
 
 # Is it too much? Maybe 60%?
 
-.center[![Gapminder](GIF/sample60.gif)]
+.center[![](GIF/sample60.gif)]
 
 ---
 
 # What if I want to be really sure? 99%?
 
-.center[![Gapminder](GIF/sample99.gif)]
+.center[![](GIF/sample99.gif)]
 
 ---
 
 # A bit more? How about 99.99%?
 
-.center[![Gapminder](GIF/sample9999.gif)]
+.center[![](GIF/sample9999.gif)]
 
 ---
 
 # What if I want to be certain? 100%? 😳
 
-.center[![Gapminder](GIF/sample100.gif)]
+.center[![](GIF/sample100.gif)]
 
 ---
 
@@ -463,7 +463,7 @@ include_graphics("pics/sample_cin2.jpeg")
 - The only certainty one can have is that, for example, a proportion will always be included in the interval from 0% to 100%. .hi-purple[However, this is neither informative nor useful] 🧐 and it does not even depend on the data.
 - There exists a trade-off between .hi-pink[risk] as measured by  1 - $\alpha$ (typically 95%) the confidence level, and the .hi-pink[precision of the conclusion] as measured, for example, by the confidence interval length.
 - Moreover, the larger the sample size, the more precise the conclusion, for the same confidence level.
-- Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (safety in airplanes vs which soft drink tastes better).
+- Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (e.g. safety in airplanes vs which soft drink tastes better).
 
 ---
 
@@ -480,7 +480,7 @@ include_graphics("pics/risk2.png")
 # How to test a (scientific) hypothesis?
 
 - .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%.]
-- .smaller[However, p-values have been misused many times because understanding what they mean is not intuitive.]
+- .smaller[However, .hi-purple[p-values have been misused] many times because understanding what they mean is not intuitive.]
 
 <div align="center">
    <iframe width="560" height="315" src="https://fivethirtyeight.abcnews.go.com/video/embed/56150342" frameborder="0" allowfullscreen>
@@ -498,18 +498,17 @@ include_graphics("pics/risk2.png")
 - .smaller[Each hypothesis .purple[exclude each other], so that onse can .purple[exclude one in favor of the other] using the data.]
 - .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random, i.e. the most precise.he hypothesis that the votes are 50%-50%.]
 - .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence hass a chance to be favored with respect to the null hypothesis (e.g. proportion of NO is smaller than 50%).]
-- .smaller[Informally, .hi-pink[it can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompa,tibility of the null hypothesis with the data.]
+- .smaller[Informally, .hi-pink[it can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
 
 ---
 
 # Testing
 
-- .smaller[When this happens, one says that the test based on the null and alternative hypothesis is .pink[significant] or that the null hypothesis is rejected in favour of the alternative.]
-- .smaller[If this does not happen, with the available data, then .pink[nothing] can be concluded.]
-- .smaller[With a sample of data, the obtained p-value (associated to a couple of hypothesis) summarizes somehow the .pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.]
-- .smaller[The (sample) p-value is traditionnally compared to a .pink[threshold value] that sets the (subjective) risk level of deciding in favor of the incompatibility.]
-- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%.]
-
+- .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis]. 🥳]
+- .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
+- .smaller[With a sample of data, the obtained p-value (associated to a couple of hypotheses) summarizes somehow the .hi-pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.] 🙈
+- .smaller[The (sample) p-value is traditionally compared to a .pink[threshold value] that sets the (subjective) risk level of deciding in favor of the incompatibility.]
+- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%, but again this depends of the context.]
 
 ---
 
@@ -551,14 +550,12 @@ include_graphics("pics/sample_pvaln.jpeg")
 
 ---
 
-# Testing
+# What to remeber about p-values
 
-- .smaller[A p-value is a random variable, since its value depends on the data. Likewise, confidence intervals are random, since their bounds depend on the data.]
-- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the later chosen as 5%, then, on average, .pink[the (sample) p-value is below 5% once in twenty times!]]
-- .smaller[Hence performing .pink[multiple tests], with the same or different data, automatically leads to .pink[significant results, when actually there are none!]]
-- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on.]
-
-+ DIFF BETWEEN TEST AND CI (I would not...)
+- .smaller[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data.]
+- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the later chosen as 5%, then, on average, the (sample) p-value is below 5% .purple[once in twenty times!]]
+- .smaller[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
+- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be use to assess the validity of most (scientific) hypothesis] (as discuss in your statistics classes! 🤓).]
 
 
 ---
@@ -688,18 +685,31 @@ include_graphics("pics/replic.jpg")
 
 ---
 
-# Take home message
+# ⚠️ Take home message
 
-- .smaller[Any data analysis made on a sample of data is subject to randomness.]
-- .smaller[Understanding the random processes underlying any data analysis, including computing statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical litterarcy].]
-- .smaller[With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conlcusion might be wrong.] 
-- .smaller[One has to live with this fact, and any scientific activity that might conclude with 100% certainty on the basis of data, is simply a fallacy.]
-- .smaller[However, properly controlling for the statistical risk and properly understanting the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.]
-- .smaller[Maybe add something (a link) about good practice in data analysis as proposed in many places...]
+- Any data analysis made on a sample of data is subject to .purple[randomness].
+- Understanding the random processes underlying any data analysis, including computing statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical literacy].
+- With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conclusion might be wrong. 
+- .pink[One has to live with this fact, and any scientific activity that might conclude with 100% certainty on the basis of data, is simply a fallacy].
+- However, properly controlling for the statistical risk and properly understating the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.
 
 ---
 
-# Thanks
+# Thank you very much for your attention
+
+.center[Slides are available [here]()]
+
+.center[All material is available on [GitHub](https://github.com/stephaneguerrier/StatLiteracy)]
+
+<br>
+```{R, greenagainagainagain, out.width = "37%", echo = F}
+include_graphics("pics/green.png")
+```
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+
+
+
 
 
 

@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <meta name="author" content="Stéphane Guerrier" />
     <meta name="date" content="2020-10-22" />
-    <link href="p-hacking_files/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="p-hacking_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
-    <link href="p-hacking_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="my-css.css" type="text/css" />
   </head>
   <body>
@@ -49,7 +49,7 @@ class: center, middle, inverse, title-slide
 
 
 .smallest[.hi-pink[Statistical Literacy] can be defined as follows:]
-- .smallest[The ability to .pink[understand and reason with data], or arguments that use data.]
+- .smallest[The ability to .pink[understand data], or arguments that use data.]
 - .smallest[Being able to apply .pink[critical thinking] about numbers and about .pink[statistics used as evidence in arguments].]
 - .smallest[Understanding how statistical associations are used to assess causal connections.]  
 
@@ -63,7 +63,7 @@ class: center, middle, inverse, title-slide
 👋 .smallest[If you want to know more about this comics have a look [here](https://www.explainxkcd.com/wiki/index.php/552:_Correlation).]
 ]
 
-.smallest[.hi-purple[Statistical literacy is now becoming an essential skill]. It is, for exeample, needed by .purple[anyone who tries to learn new information from data]. .turquoise[Scientists also need to develop statistical literacy so that they can both produce rigorous and reproducible research.]]
+.smallest[.hi-purple[Statistical literacy is now becoming an essential skill]. It is, for example, needed by .purple[anyone who tries to learn new information from data]. .turquoise[Scientists also need to develop statistical literacy so that they can produce both rigorous and reproducible research.]]
 
 ---
 
@@ -79,9 +79,9 @@ class: center, middle, inverse, title-slide
 
 # How can statistics be useful?
 
-As mentionned previously, Statistics is the .pink[science of learning from data]. It can be used (among other) to:
-1. .purple[Vizualise data] (e.g. propagation of COVID-19 in different countries).
-2. .purple[Understand and interpret data] (e.g. main causes of cancer?). 
+As mentionned previously, statistics is the .pink[science of learning from data]. It can be used (among others) to:
+1. .purple[Visualize data] (e.g. propagation of COVID-19 in different countries).
+2. .purple[Understand and interpret data] (e.g. main causes of cancer). 
 3. .purple[Make prediction] (e.g. predicting unemployement or risk indices).
 4. .hi-pink[Assess the validity of an hypothesis].
 
@@ -96,7 +96,7 @@ In this class, we will focus on the last point:
 
 # How does it work?
 
-- Statistics methods are based on several fundamental concepts, the most central of which is that of considering the information available (in the form of data) as resulting from a .hi-pink[random process]. 🙉
+- Statistical methods are based on several fundamental concepts, the most central of which is to consider the information available (in the form of data) resulting from a .hi-pink[random process]. 🙉
 - As such, the data represent a .hi-turquoise[random sample] of a totally or conceptually accessible .hi-turquoise[population].
 
 &lt;img src="pics/sampling.png" width="50%" style="display: block; margin: auto;" /&gt;
@@ -109,8 +109,8 @@ In this class, we will focus on the last point:
 
 - Statistics allows to determine the .hi-pink[decision-making risks] (in the form of probabilities) associated with learning (decisions) based on the analysis of data made on samples. .slate[This allows to evaluate the validity of a claim] (such as the ones we discussed previously). 
 - .purple[Understanding and knowing how to interpret statistical analyses is therefore becoming an increasingly vital skill].
-- In some sense, .hi-pink[statistics plays a crucial part in our lifes] as new discoveries (obtained using statistical methods) directly impact us&lt;sup&gt;.smallest[👋]&lt;/sup&gt;.
-- However, understanding statistical results is not intuitive. There exists many pitfall such as .purple[p-hacking] or .purple[HARKing] (e.g. why are there so many contraditory studies? Is Hydroxychloroquine working or not?).
+- In some sense, .hi-pink[statistics plays a crucial part in our life] as new discoveries (obtained using statistical methods) directly impact us&lt;sup&gt;.smallest[👋]&lt;/sup&gt;.
+- However, understanding statistical results is not intuitive. There exist many pitfalls such as .purple[p-hacking] or .purple[HARKing] (e.g. why are there so many contradictory studies? Is Hydroxychloroquine working or not?).
 
 
 
@@ -142,7 +142,7 @@ In this class, we will focus on the last point:
 
 &lt;img src="pics/medical_studies2.png" width="70%" style="display: block; margin: auto;" /&gt;
 
-.footnote[.smallest[👋] Read the original article: "*This is why you shouldn’t believe that exciting new medical study*", [here](https://www.vox.com/2015/3/23/8264355/research-study-hype).]
+.footnote[.smallest[👋] Read the original article: "*This is why you shouldn’t believe that exciting new medical study*" [here](https://www.vox.com/2015/3/23/8264355/research-study-hype).]
 
 ---
 
@@ -158,9 +158,9 @@ In this class, we will focus on the last point:
 
 # The Hydroxychloroquine Controversy 🦠
 
-Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) was an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there has been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear.
+Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear.
 
-As summarized on [Wikipedia](https://en.wikipedia.org/wiki/Hydroxychloroquine#COVID-19) dedicated to the hydroxychloroquine (and citing various scientific sources): .turquoise["*There is no strong scientific evidence to support the use of hydroxychloroquine for preventing or treating coronavirus disease 2019 (COVID‑19)*"].
+As summarized in [Wikipedia](https://en.wikipedia.org/wiki/Hydroxychloroquine#COVID-19) dedicated to the hydroxychloroquine (and citing various scientific sources): .turquoise["*There is no strong scientific evidence to support the use of hydroxychloroquine for preventing or treating coronavirus disease 2019 (COVID‑19)*"].
 
 .hi-pink[So what does this mean?] 🤔 
 
@@ -173,7 +173,7 @@ Does it mean that hydroxychloroquine is not effective for preventing or treating
 To fix ideas we will consider a simple example. On September 27 2020, the Swiss population voted on the .pink[*Loi fédérale sur la chasse et la protection des mammifères et oiseaux sauvages (Loi sur la chasse, LChP)*]. The proposal was not accepted as it only received 48% of supporting votes&lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Suppose that we were interested in collecting data .hi-purple[before the vote] to assess if this proposal was likely to be accepted. In this example, we will make the following assumptions for simplicity:
 
 - The Swiss population of voter is composed of 1200 individuals (576 for the project, 624 against).
-- We can perfectly sample the population (everyone is available, no double sampling, the sampling is random).
+- We can perfectly sample the population (everyone is available, no double sampling, and the sampling is random).
 - People don't change their mind and they don't lie.
 
 .footnote[.smallest[👋] More details on the results can be found [here](https://www.bk.admin.ch/ch/f/pore/va/20200927/index.html).]
@@ -211,11 +211,11 @@ To fix ideas we will consider a simple example. On September 27 2020, the Swiss 
 
 ---
 
-# How to Measure Uncertainty?
+# How to measure uncertainty?
 
 - .smaller[.pink[Uncertainty can be measured in many different ways]].
 - .smaller[A common approach (in statistics) is to use .hi-purple[confidence intervals]]. 
-- .smaller[These intervals corresponds to a .pink[range of values that are likely to include a population value with a certain level of confidence]. The level of confidence is a probability expressed as a %.] 
+- .smaller[These intervals correspond to a .pink[range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a %.] 
 - .smaller[In our example, we are interested in the true (population) proportion of voters in favor of the proposal (48%). Using our second sample (8 against and 12 for) we could construct the following 90% confidence interval]:
 
 .pull-left[
@@ -228,7 +228,7 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 ---
 
-# How to Measure Uncertainty?
+# How to measure uncertainty?
 
 &lt;img src="pics/sample_ci1.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
 
@@ -247,13 +247,13 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 ---
 
-# How to Measure Uncertainty?
+# How to measure uncertainty?
 
 .center[![Gapminder](GIF/sample90.gif)]
 
 ---
 
-# How to Measure Uncertainty?
+# How to measure uncertainty?
 
 &lt;img src="pics/sample_cin.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
 
@@ -273,35 +273,35 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 # Is it too much? Maybe 60%?
 
-.center[![Gapminder](GIF/sample60.gif)]
+.center[![](GIF/sample60.gif)]
 
 ---
 
 # What if I want to be really sure? 99%?
 
-.center[![Gapminder](GIF/sample99.gif)]
+.center[![](GIF/sample99.gif)]
 
 ---
 
 # A bit more? How about 99.99%?
 
-.center[![Gapminder](GIF/sample9999.gif)]
+.center[![](GIF/sample9999.gif)]
 
 ---
 
 # What if I want to be certain? 100%? 😳
 
-.center[![Gapminder](GIF/sample100.gif)]
+.center[![](GIF/sample100.gif)]
 
 ---
 
 # ⚠️ Take home message
 
 - Since the data is available through sampling, it is .hi-purple[random]. .pink[Therefore, a decision or prediction can never be made with certainty!]
-- The only certainty one can have is that, for example, a proportion will always be included in the interval from 0% to 100%. .hi-purple[However, this is not informative nor useful] 🧐 and it does not even depend on the data.
-- There exist a tradeoff between .hi-pink[risk] as measured by  1 - `\(\alpha\)` (typically 95%) the confidence level, and the .hi-pink[precision of the conclusion] as measured, for example, by the confidence interval length.
+- The only certainty one can have is that, for example, a proportion will always be included in the interval from 0% to 100%. .hi-purple[However, this is neither informative nor useful] 🧐 and it does not even depend on the data.
+- There exists a trade-off between .hi-pink[risk] as measured by  1 - `\(\alpha\)` (typically 95%) the confidence level, and the .hi-pink[precision of the conclusion] as measured, for example, by the confidence interval length.
 - Moreover, the larger the sample size, the more precise the conclusion, for the same confidence level.
-- Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (safety in airplanes vs which soft drink tastes better).
+- Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (e.g. safety in airplanes vs which soft drink tastes better).
 
 ---
 
@@ -316,7 +316,7 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 # How to test a (scientific) hypothesis?
 
 - .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%.]
-- .smaller[However, p-values have been misused many times because understanding what they mean is not intuitive.]
+- .smaller[However, .hi-purple[p-values have been misused] many times because understanding what they mean is not intuitive.]
 
 &lt;div align="center"&gt;
    &lt;iframe width="560" height="315" src="https://fivethirtyeight.abcnews.go.com/video/embed/56150342" frameborder="0" allowfullscreen&gt;
@@ -331,21 +331,20 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 # How to test a (scientific) hypothesis?
 
 - .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigations. For example, for the voting proposal, one hypothesis is that the majority is against the proposal, and the other one is that there is no majority (the YES and NO are both at 50%)]
-- .smaller[Each hypothesis .purple[exclude each other], so that one can .purple[exclude one in favor of the other] using the data.]
-- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random, i.e. the most precise. In the example it is the hypothesis that the votes are 50%-50%.]
-- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. proportion of NO is smaller than 50%).]
+- .smaller[Each hypothesis .purple[exclude each other], so that onse can .purple[exclude one in favor of the other] using the data.]
+- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random, i.e. the most precise.he hypothesis that the votes are 50%-50%.]
+- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence hass a chance to be favored with respect to the null hypothesis (e.g. proportion of NO is smaller than 50%).]
 - .smaller[Informally, .hi-pink[it can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
 
 ---
 
 # Testing
 
-- .smaller[When this happens, one says that the test based on the null and alternative hypothesis is .pink[significant] or that the null hypothesis is rejected in favour of the alternative.]
-- .smaller[If this does not happen, with the available data, then .pink[nothing] can be concluded.]
-- .smaller[With a sample of data, the obtained p-value (associated to a couple of hypothesis) summarizes somehow the .pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.]
-- .smaller[The (sample) p-value is traditionnally compared to a .pink[threshold value] that sets the (subjective) risk level of deciding in favor of the incompatibility.]
-- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%.]
-
+- .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis]. 🥳]
+- .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
+- .smaller[With a sample of data, the obtained p-value (associated to a couple of hypotheses) summarizes somehow the .hi-pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.] 🙈
+- .smaller[The (sample) p-value is traditionally compared to a .pink[threshold value] that sets the (subjective) risk level of deciding in favor of the incompatibility.]
+- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%, but again this depends of the context.]
 
 ---
 
@@ -379,14 +378,12 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 ---
 
-# Testing
+# What to remeber about p-values
 
-- .smaller[A p-value is a random variable, since its value depends on the data. Likewise, confidence intervals are random, since their bounds depend on the data.]
-- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the later chosen as 5%, then, on average, .pink[the (sample) p-value is below 5% once in twenty times!]]
-- .smaller[Hence performing .pink[multiple tests], with the same or different data, automatically leads to .pink[significant results, when actually there are none!]]
-- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on.]
-
-+ DIFF BETWEEN TEST AND CI (I would not...)
+- .smaller[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data.]
+- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the later chosen as 5%, then, on average, the (sample) p-value is below 5% .purple[once in twenty times!]]
+- .smaller[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
+- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be use to assess the validity of most (scientific) hypothesis] (as discuss in your statistics classes! 🤓).]
 
 
 ---
@@ -498,18 +495,25 @@ HARKing is (arguably) playing an important role in the .hi-purple[replication cr
 
 ---
 
-# Take home message
+# ⚠️ Take home message
 
-- .smaller[Any data analysis made on a sample of data is subject to randomness.]
-- .smaller[Understanding the random processes underlying any data analysis, including computing statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical litterarcy].]
-- .smaller[With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conlcusion might be wrong.] 
-- .smaller[One has to live with this fact, and any scientific activity that might conclude with 100% certainty on the basis of data, is simply a fallacy.]
-- .smaller[However, properly controlling for the statistical risk and properly understanting the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.]
-- .smaller[Maybe add something (a link) about good practice in data analysis as proposed in many places...]
+- Any data analysis made on a sample of data is subject to .purple[randomness].
+- Understanding the random processes underlying any data analysis, including computing statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical literacy].
+- With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conclusion might be wrong. 
+- .pink[One has to live with this fact, and any scientific activity that might conclude with 100% certainty on the basis of data, is simply a fallacy].
+- However, properly controlling for the statistical risk and properly understating the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.
 
 ---
 
-# Thanks
+# Thank you very much for your attention
+
+.center[Slides are available [here]()]
+
+.center[All material is available on [GitHub](https://github.com/stephaneguerrier/StatLiteracy)]
+
+&lt;br&gt;
+&lt;img src="pics/green.png" width="37%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
