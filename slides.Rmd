@@ -507,8 +507,8 @@ include_graphics("pics/risk2.png")
 - .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis]. 🥳]
 - .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
 - .smaller[With a sample of data, the obtained p-value (associated to a couple of hypotheses) summarizes somehow the .hi-pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.] 🙈
-- .smaller[The (sample) p-value is traditionally compared to a .pink[threshold value] that sets the (subjective) risk level of deciding in favor of the incompatibility.]
-- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%, but again this depends of the context.]
+- .smaller[The (sample) p-value is usually compared to a .pink[threshold value] that sets the (subjective) risk level of decision in favor of the incompatibility.]
+- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%, but again this depends on the context.]
 
 ---
 
@@ -550,17 +550,17 @@ include_graphics("pics/sample_pvaln.jpeg")
 
 ---
 
-# What to remeber about p-values
+# What to remember about p-values
 
 - .smaller[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data.]
-- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the later chosen as 5%, then, on average, the (sample) p-value is below 5% .purple[once in twenty times!]]
+- .smaller[Hence, by chance, it might happen that while the null hypothesis cannot be rejected (supposing it is true), that the p-value is smaller than the set threshold. With the latter chosen as 5%, then, on average, the (sample) p-value is below 5% .purple[once in twenty times!]]
 - .smaller[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
-- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be use to assess the validity of most (scientific) hypothesis] (as discuss in your statistics classes! 🤓).]
+- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
 
 
 ---
 
-# Why are there contraditory studies?
+# Why are there contradictory studies?
 
 .purple[Are jelly beans causing acne? Maybe... but why only green ones?] 🤨 
 
@@ -638,7 +638,7 @@ include_graphics("pics/phacking.png")
 
 # How to P-Hack? 🤔
 
-.smaller[Are republicans are good or bad for the American Economy? .hi-purple[Both!!] (see [link](https://projects.fivethirtyeight.com/p-hacking/))]
+.smaller[Are republicans are good or bad for the American Ecy? .hi-purple[Both!!] (see [link](https://projects.fivethirtyeight.com/p-hacking/))]
 
 ```{R, rep, out.width = "72%", echo = F}
 include_graphics("pics/republican.png")
@@ -648,7 +648,7 @@ include_graphics("pics/republican.png")
 
 # This bring us to "HARKing"
 
-.pull-left[.smallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
+.pull-left[.smallsest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
 
 .hi-pink[How to do it?] 🤔
 
@@ -688,10 +688,10 @@ include_graphics("pics/replic.jpg")
 # ⚠️ Take home message
 
 - Any data analysis made on a sample of data is subject to .purple[randomness].
-- Understanding the random processes underlying any data analysis, including computing statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical literacy].
+- Understanding the random processes underlying any data analysis, includinunderlyingg statistics such as confidence intervals and p-values, requires basic knowledge in probability and statistics, or .pink[statistical literacy].
 - With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conclusion might be wrong. 
 - .pink[One has to live with this fact, and any scientific activity that might conclude with 100% certainty on the basis of data, is simply a fallacy].
-- However, properly controlling for the statistical risk and properly understating the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.
+- However, properly controlling for the statistical risk and properly rstating the conclusions that can be drawn from a data analysis, can really bring new knowledge, especially in all the sciences that are based on observations.
 
 ---
 
