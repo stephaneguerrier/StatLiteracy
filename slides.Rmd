@@ -304,7 +304,7 @@ include_graphics("pics/medical_studies2.png")
 
 ---
 
-# The Hydroxychloroquine Controversy 
+# The Hydroxychloroquine Controversy 🦠
 
 Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear.
 
@@ -644,7 +644,7 @@ include_graphics("pics/phacking.png")
 
 # How to P-Hack? 🤔
 
-.smaller[Are republicans good or bad for the American Ecy? .hi-purple[Both!!] (see [linkonom](https://projects.fivethirtyeight.com/p-hacking/))]
+.smaller[Are republicans good or bad for the American Economy? .hi-purple[Both!!] (see [link](https://projects.fivethirtyeight.com/p-hacking/))]
 
 ```{R, rep, out.width = "72%", echo = F}
 include_graphics("pics/republican.png")
@@ -652,9 +652,9 @@ include_graphics("pics/republican.png")
 
 ---
 
-# This bring us to "HARKing"
+# This brings us to "HARKing"
 
-.pull-left[.smsallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
+.pull-left[.smallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
 
 .hi-pink[How to do it?] 🤔
 
