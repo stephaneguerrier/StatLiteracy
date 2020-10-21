@@ -648,12 +648,12 @@ include_graphics("pics/republican.png")
 
 # This bring us to "HARKing"
 
-.pull-left[.smallsest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
+.pull-left[.smallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
 
 .hi-pink[How to do it?] 🤔
 
-- Test if one jelly bean color is linked to acne
-- Pretend this was our original hypothesis
+- Test if one jelly bean color is linked to acne.
+- Pretend this was our original hypothesis.
 - Et voilà!
 
 👋  If you want to know more, have a look [here](https://en.wikipedia.org/wiki/HARKing) and the references therein.]]
@@ -697,9 +697,7 @@ include_graphics("pics/replic.jpg")
 
 # Thank you very much for your attention
 
-.center[Slides are available [here]()]
-
-.center[All material is available on [GitHub](https://github.com/stephaneguerrier/StatLiteracy)]
+.center[All material is available on [GitHub](https://github.com/stephaneguerrier/StatLiteracy) at [https://github.com/stephaneguerrier/StatLiteracy](https://github.com/stephaneguerrier/StatLiteracy)]
 
 <br>
 ```{R, greenagainagainagain, out.width = "37%", echo = F}

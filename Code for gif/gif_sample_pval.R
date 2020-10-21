@@ -17,7 +17,7 @@ my_sample = sample(1:n)
 library("gifski")
 png_path <- file.path(tempdir(), "frame%03d.png")
 png(png_path, units="px", width=1600*1.4, height=1600*1.125, res=300)
-par(ask = FALSE, mar = c(1.75,0.5,0.5,0.5))
+par(ask = FALSE, mar = c(3.25,0.75,0.75,0.75))
 nb = 61
 
 
@@ -28,19 +28,19 @@ for (k in 1:nb){
   lines(c(27,37), c(34,34))
   ymax1 = for_a*6 + 34
   ymax2 = (1 - for_a)*6 + 34
-  
+
   rect(28, 34, 31, ymax1, col = cols[1])
   rect(33, 34, 36, ymax2, col = cols[2])
-  
+
   text(29.5, 32.6, "N")
   text(34.5, 32.6, "Y")
   rect(29.5 - 1, 32.6 - 1, 29 + 1.5, 32 + 1.5, border = cols[1], lwd = 2)
   rect(4, 35.5, 6, 37, col = cols[1])
   rect(4, 33, 6, 34.5, col = cols[2])
-  
+
   text(15, 35.5/2 + 37/2, paste("Against:  ",100*for_a, "%", sep = ""))
   text(15, 35.5/2 + 37/2 - 2.5, paste("For:       ",100*(1-for_a), "%", sep = ""))
-  
+
   for (i in 1:30){
     for (j in 1:40){
       counter = counter + 1
@@ -51,8 +51,8 @@ for (k in 1:nb){
       }
     }
   }
-  
-  
+
+
   if (k > 1){
     for (l in 1:(k-1)){
       for (h in 1:10){
@@ -66,7 +66,7 @@ for (k in 1:nb){
         points(mod + 1, ypos, col = 1, pch = 16, cex = 0.9)
       }
     }
-    
+
     for (g in 1:counter2){
       if (my_sample[g] <= n*for_a){
         points((g-1) %% (n2/2) + 45, floor((g-1)/(n2/2)) + 1, col = cols[1], pch = 16, cex = 0.9)
@@ -75,26 +75,26 @@ for (k in 1:nb){
         points((g-1) %% (n2/2) + 45, floor((g-1)/(n2/2)) + 1, col = cols[2], pch = 16, cex = 0.9)
       }
     }
-    
+
     delta = 43
     text(15 + delta + 5, 40, paste("Sample (", round(counter2/n*100, 1), "% of pop.)", sep = ""), cex = 1.25)
     lines(c(27,41) + delta, c(34,34))
     ymax1 = (1- counter3/counter2)*6 + 34
     ymax2 = (counter3/counter2)*6 + 34
-    
+
     rect(28 + delta, 34, 31 + delta, ymax1, col = cols[1])
     rect(33 + delta, 34, 36 + delta, ymax2, col = cols[2])
-    
+
     text(29.5 + delta, 32.6, "A")
     text(34.5 + delta, 32.6, "B")
     text(39.5 + delta, 32.6, "?")
-    
+
     rect(4 + delta -1, 35.5, 6 + delta - 1, 37, col = cols[1])
     rect(4 + delta -1, 33, 6 + delta - 1, 34.5, col = cols[2])
-    
+
     text(15 + delta -1, 35.5/2 + 37/2, paste("Against:  ",round(100*(1 - counter3/counter2),1), "%", sep = ""))
     text(15 + delta -1 , 35.5/2 + 37/2 - 2.5, paste("For:       ",round(100*(counter3/counter2),1), "%", sep = ""))
-    
+
     if (qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3) < 0.5 || qbeta(alpha/2, counter3, counter2 - counter3 + 1) > 0.5){
       if (counter3/counter2 < 0.5){
         rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, border = cols[1], lwd = 2)
@@ -104,24 +104,24 @@ for (k in 1:nb){
     }else{
       rect(34.5 + 5 + delta - 1, 32.6 - 1, 34 + 5 + delta + 1.5, 32 + 1.5, border = 1, lwd = 2)
     }
-    
-    
+
+
     prop_min = 55 - 10
     prop_max = 74 + 10
     prop_y = -2.5
     delta_y_prop = 0.5
     lines(c(prop_min, prop_max), c(prop_y, prop_y))
     d = prop_max - prop_min
-    
+
     for (u in 0:10){
       lines(c(prop_min, prop_min) + u/10*d, c(prop_y - delta_y_prop,prop_y+delta_y_prop))
       text(prop_min + u/10*d, -5, u/10, cex = 0.9)
     }
-    
+
     lines(c(prop_min,prop_min) + 5/10*d, c(prop_y - 1.5*delta_y_prop,prop_y+1.5*delta_y_prop), lwd = 2)
     text(prop_min, -0.5, "No", cex = 0.9)
     text(prop_min + d, -0.5, "Yes", cex = 0.9)
-    
+
     if (counter3/counter2 >= 0.5){
       points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
       rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[2], border = "NA")
@@ -129,21 +129,21 @@ for (k in 1:nb){
       points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
       rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[1], border = "NA")
     }
-    
+
     text(67, 26, expression(paste(alpha, " = 5%", sep = "")), cex = 1.2, pos = 4)
     text(67, 22, expression(paste(H[0], " : ", p[yes], " = 50%", sep = "")), cex = 1.2, pos = 4)
     text(67, 18, expression(paste(H[1], " : ", p[yes], " < 50%", sep = "")), cex = 1.2, pos = 4)
     pval = binom.test(x = counter3, n = counter2, p = 0.5, alternative = c("less"))$p.value
-    
+
     text(67, 14, paste("P-value = ", round(pval*100,2), "%", sep = ""), cex = 1.2, pos = 4)
-    
+
     if (pval > 0.05){
       text(67, 10, expression(paste("P-value > ", alpha, sep = "")), cex = 1.2, pos = 4)
     }else{
       text(67, 10, expression(paste("P-value < ", alpha, sep = "")), cex = 1.2, pos = 4, col = cols[1])
       rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, col = cols_trans[1], border = "NA")
     }
-    
+
     if (pval < 0.05){
       text(67, 6, expression(paste("We can conclude that", sep = "")), cex = 0.85, pos = 4, col = cols[1])
       text(67, 4, expression(paste(p[yes], " is smaller than 50%", sep = "")), cex = 0.85, pos = 4, col = cols[1])
@@ -151,9 +151,9 @@ for (k in 1:nb){
       text(67, 6, expression(paste("We cannot reject that", sep = "")), cex = 0.85, pos = 4, col = 1)
       text(67, 4, expression(paste(p[yes], " is equal to 50%", sep = "")), cex = 0.85, pos = 4, col = 1)
     }
-    
+
   }
-  
+
 }
 
 
