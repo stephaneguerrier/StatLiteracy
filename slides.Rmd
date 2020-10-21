@@ -304,7 +304,7 @@ include_graphics("pics/medical_studies2.png")
 
 ---
 
-# The Hydroxychloroquine Controversy 🦠
+# The Hydroxychloroquine Controversy 
 
 Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear.
 
@@ -371,7 +371,7 @@ include_graphics("pics/samplelast.jpeg")
 
 - .smaller[.pink[Uncertainty can be measured in many different ways]].
 - .smaller[A common approach (in statistics) is to use .hi-purple[confidence intervals]]. 
-- .smaller[These intervals correspond to a .pink[range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a percentage (%).] 
+- .smaller[These intervals correspond to .pink[a range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a percentage (%).] 
 - .smaller[In our example, we are interested in the true (population) proportion of voters in favor of the proposal (48%). Using our second sample (8 against and 12 for) we could construct the following 90% confidence interval]:
 
 .pull-left[
@@ -510,7 +510,7 @@ include_graphics("pics/risk2.png")
 
 # Testing
 
-- .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis]. 🥳]
+- .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis].]
 - .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
 - .smaller[With a sample of data, the obtained p-value (associated to a couple of hypotheses) summarizes somehow the .hi-pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.]
 - .smaller[The (sample) p-value is usually compared to a .pink[threshold value] that sets the (subjective) risk level of decision in favor of the incompatibility.]
@@ -644,7 +644,7 @@ include_graphics("pics/phacking.png")
 
 # How to P-Hack? 🤔
 
-.smaller[Are republicans good or bad for the American Ecy? .hi-purple[Both!!] (see [link](https://projects.fivethirtyeight.com/p-hacking/))]
+.smaller[Are republicans good or bad for the American Ecy? .hi-purple[Both!!] (see [linkonom](https://projects.fivethirtyeight.com/p-hacking/))]
 
 ```{R, rep, out.width = "72%", echo = F}
 include_graphics("pics/republican.png")
@@ -654,7 +654,7 @@ include_graphics("pics/republican.png")
 
 # This bring us to "HARKing"
 
-.pull-left[.smallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
+.pull-left[.smsallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
 
 .hi-pink[How to do it?] 🤔
 
