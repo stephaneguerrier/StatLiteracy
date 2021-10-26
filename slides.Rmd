@@ -2,7 +2,7 @@
 title: "Introduction to Statistical Literacy"
 subtitle: "Analyse et traitement de l’information \\  Comprendre le numérique"
 author: "Stéphane Guerrier"
-date: "22 October 2020"
+date: "28 October 2021"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
@@ -306,13 +306,11 @@ include_graphics("pics/medical_studies2.png")
 
 # The Hydroxychloroquine Controversy 🦠
 
-Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear.
+.smallest[Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear. The timeline can be found [here](https://en.wikipedia.org/wiki/Chloroquine_and_hydroxychloroquine_during_the_COVID-19_pandemic).]
 
-As summarized in the [Wikipedia entry](https://en.wikipedia.org/wiki/Hydroxychloroquine#COVID-19) dedicated to hydroxychloroquine (and citing various scientific sources): .turquoise["*There is no strong scientific evidence to support the use of hydroxychloroquine for preventing or treating coronavirus disease 2019 (COVID‑19)*"].
-
-.hi-pink[So what does this mean?] 🤔 
-
-Does it mean that hydroxychloroquine is not effective in preventing or treating COVID‑19? That it is effective? Actually, neither...  🤔 
+```{R, fact, out.width = "70%", echo = F}
+include_graphics("pics/FACT.jpg")
+```
 
 ---
 
