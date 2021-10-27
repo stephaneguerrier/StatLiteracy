@@ -32,7 +32,7 @@ set.seed(16456 + 690)
 # 335  690 3389
 my_sample = sample(1:n)
 
-# library("gifski")
+library("gifski")
 # png_path <- file.path(tempdir(), "frame%03d.png")
 # png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
 par(ask = FALSE, mar = c(3,0.75,0.75,0.75))

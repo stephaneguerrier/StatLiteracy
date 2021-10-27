@@ -714,48 +714,53 @@ include_graphics("pics/risk2.png")
 
 # Testing
 
-LIONEL: TO CHANGE
 
 ```{R, test1, out.width = "90%", echo = F}
-include_graphics("pics/sample_pval1.jpeg")
+include_graphics("pics/gif_trump_p_hat_test_for_biden_1.png")
 ```
 
 ---
 
 # Testing
 
-LIONEL: TO CHANGE
 
 ```{R, test2, out.width = "90%", echo = F}
-include_graphics("pics/sample_pval2.jpeg")
+include_graphics("pics/gif_trump_p_hat_test_for_biden_2.png")
 ```
 
 ---
 
 # Testing
 
-LIONEL: TO CHANGE
 
 ```{R, test3, out.width = "90%", echo = F}
-include_graphics("pics/sample_pval3.jpeg")
+include_graphics("pics/gif_trump_p_hat_test_for_biden_3.png")
 ```
 
 ---
 
 # Testing
 
-LIONEL: TO CHANGE
 
-.center[![](GIF/sample_pval.gif)]
+.center[![](GIF/gif_trump_p_hat_test_for_biden.gif)]
 
 ---
 
 # Testing
 
-LIONEL: TO CHANGE
+
+.center[![](GIF/gif_trump_p_hat_test_for_trump.gif)]
+
+---
+
+
+
+# Testing
+
+
 
 ```{R, testn, out.width = "90%", echo = F}
-include_graphics("pics/sample_pvaln.jpeg")
+include_graphics("pics/plot_final_trump_sampling.png")
 ```
 
 ---
