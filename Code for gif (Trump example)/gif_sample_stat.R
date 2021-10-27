@@ -1,3 +1,4 @@
+# code for law nature with population, sample and CI
 gg_color_hue <- function(n, alpha = 1) {
   hues = seq(15, 375, length = n + 1)
   hcl(h = hues, l = 65, c = 100, alpha = alpha)[1:n]
@@ -14,13 +15,14 @@ alpha = 0.4
 set.seed(16)
 my_sample = sample(1:n)
 
-library("gifski")
-png_path <- file.path(tempdir(), "frame%03d.png")
-png(png_path, units="px", width=1600*1.4, height=1600*1.125, res=300)
+# library("gifski")
+# png_path <- file.path(tempdir(), "frame%03d.png")
+# png(png_path, units="px", width=1600*1.4, height=1600*1.125, res=300)
 par(ask = FALSE, mar = c(3.25,0.75,0.75,0.75))
 nb = 61
 
 for (k in 1:nb){
+  Sys.sleep(.3)
   plot(NA, xlim = c(0, 85), ylim = c(-5, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = 0
   text(15 + 5, 40, "Population", cex = 1.25)

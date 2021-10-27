@@ -1,3 +1,5 @@
+# trump  draw sample with normal curve
+
 cols = rev(c("grey50", "#de0100", "#0015bc"))
 
 n1 = 30
@@ -11,15 +13,16 @@ for_biden = 616
 
 
 
-library("gifski")
-png_path <- file.path(tempdir(), "frame%03d.png")
-png(png_path, units="px", width=1600*1.4, height=1600, res=300)
+# library("gifski")
+# png_path <- file.path(tempdir(), "frame%03d.png")
+# png(png_path, units="px", width=1600*1.4, height=1600, res=300)
 par(ask = FALSE, mar = c(3,0.75,0.75,0.75))
 nb = 150
 
 res = rep(NA, nb)
 set.seed(17)
 for (iter in 1:nb){
+  Sys.sleep(.3)
   plot(NA, xlim = c(0, 85), ylim = c(0, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
   text(15 + 5, 40, "Population", cex = 1.25)

@@ -1,3 +1,4 @@
+# code for trump just population and CI
 cols = rev(c("grey50", "#de0100", "#0015bc"))
 
 n1 = 30
@@ -11,13 +12,14 @@ for_biden = 616
 set.seed(16)
 my_sample = sample(1:n)
 
-library("gifski")
-png_path <- file.path(tempdir(), "frame%03d.png")
-png(png_path, units="px", width=1600*1.4, height=1600, res=300)
+# library("gifski")
+# png_path <- file.path(tempdir(), "frame%03d.png")
+# png(png_path, units="px", width=1600*1.4, height=1600, res=300)
 par(ask = FALSE, mar = c(3,0.75,0.75,0.75))
 nb = 61
 
 for (k in 1:nb){
+  Sys.sleep(.3)
   plot(NA, xlim = c(0, 85), ylim = c(0, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
   text(15 + 5, 40, "Population", cex = 1.25)
