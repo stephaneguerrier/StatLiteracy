@@ -10,7 +10,8 @@ if you are connected to the internet. If you’re going off grid, grab the
 PDFs. You’ll miss out on gifs and videos, but the rest will actually
 show up. These slides were prepared with the help of Prof. [Maria-Pia
 Victoria-Feser](https://www.unige.ch/gsem/en/research/faculty/all/maria-pia-victoria-feser/),
-Prof. [Roberto Molinari](https://github.com/robertomolinari) and [Yuming
+Prof. [Roberto Molinari](https://github.com/robertomolinari), [Lionel
+Voirol](https://github.com/lionelvoirol) and [Yuming
 Zhang](https://github.com/Yuming-Zhang).
 
 *Note:* The slides were created with
@@ -20,11 +21,11 @@ Zhang](https://github.com/Yuming-Zhang).
 Dr. [Ed Rubin](https://edrub.in)
 
 **[Lecture: Introduction to Statistical Literacy
-🤓](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.html)**
+🤓](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021_web.html)**
 
 **Note formats:**
-[.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.html)
-|
+[.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021_web.html)
+\|
 [.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.pdf)
-|
-[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.Rmd)
+\|
+[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021_web.Rmd)
