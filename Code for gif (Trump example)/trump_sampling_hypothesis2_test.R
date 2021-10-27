@@ -41,7 +41,7 @@ alpha = 0.05
 
 for (k in 1:nb){
   # k=8
-  Sys.sleep(.2)
+  Sys.sleep(.5)
   plot(NA, xlim = c(0, 85), ylim = c(-7, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
   text(15 + 5, 40, "Population", cex = 1.25)
@@ -159,108 +159,108 @@ for (k in 1:nb){
   if (k > 1){
 
 
-  prop_min = 55 - 10
-  prop_max = 74 + 10
-  prop_y = -2.5
-  delta_y_prop = 0.5
-  lines(c(prop_min, prop_max), c(prop_y, prop_y))
-  d = prop_max - prop_min
+    prop_min = 55 - 10
+    prop_max = 74 + 10
+    prop_y = -2.5
+    delta_y_prop = 0.5
+    lines(c(prop_min, prop_max), c(prop_y, prop_y))
+    d = prop_max - prop_min
 
-  # draw line for estimated proportion
-  for (u in 0:10){
-    lines(c(prop_min, prop_min) + u/10*d, c(prop_y - delta_y_prop,prop_y+delta_y_prop))
-    text(prop_min + u/10*d, -5, u/10*100, cex = 0.9)
-  }
+    # draw line for estimated proportion
+    for (u in 0:10){
+      lines(c(prop_min, prop_min) + u/10*d, c(prop_y - delta_y_prop,prop_y+delta_y_prop))
+      text(prop_min + u/10*d, -5, u/10*100, cex = 0.9)
+    }
 
-  lines(c(prop_min,prop_min) + 5/10*d, c(prop_y - 1.5*delta_y_prop,prop_y+1.5*delta_y_prop), lwd = 2)
-  text(prop_min, -0.5, "Trump", cex = 0.9)
-  text(prop_min + d, -0.5, "Biden", cex = 0.9)
+    lines(c(prop_min,prop_min) + 5/10*d, c(prop_y - 1.5*delta_y_prop,prop_y+1.5*delta_y_prop), lwd = 2)
+    text(prop_min, -0.5, "Trump", cex = 0.9)
+    text(prop_min + d, -0.5, "Biden", cex = 0.9)
 
-  text(65, -7, "Estimated proportion of votes for Biden (%)", cex = 0.7)
-
-
-  # add text for test
-  text(67, 26, expression(paste(alpha, " = 5%", sep = "")), cex = 1.2, pos = 4)
-  text(67, 22, expression(paste(H[0], " : ", p[Biden], " = 50%", sep = "")), cex = 1.2, pos = 4)
-  text(67, 18, expression(paste(H[1], " : ", p[Biden], " > 50%", sep = "")), cex = 1.2, pos = 4)
-  pval = binom.test(x = counter3, n = counter2, p = 0.5, alternative = c("greater"))$p.value
-  text(67, 14, paste("P-value = ", round(pval*100,2), "%", sep = ""), cex = 1.2, pos = 4)
+    text(65, -7, "Estimated proportion of votes for Biden (%)", cex = 0.7)
 
 
-  # add text if pval is greater or smaller than alpha
-  if (pval > 0.05){
-    text(67, 10, expression(paste("P-value > ", alpha, sep = "")), cex = 1.2, pos = 4)
-  }else{
-    text(67, 10, expression(paste("P-value < ", alpha, sep = "")), cex = 1.2, pos = 4, col = cols[1])
-    # add rectangle whcih specify greater than .5 for
-    rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, col = cols_trans[1], border = "NA")
-  }
-
-  # write conclusion
-  if (pval < 0.05){
-    text(67, 6, expression(paste("We can conclude that", sep = "")), cex = 0.85, pos = 4, col = cols[1])
-    text(67, 4, expression(paste(p[Biden], " is larger than 50%", sep = "")), cex = 0.85, pos = 4, col = cols[1])
-  }else{
-    text(67, 6, expression(paste("We cannot reject that", sep = "")), cex = 0.85, pos = 4, col = 1)
-    text(67, 4, expression(paste(p[Biden], " is equal to 50%", sep = "")), cex = 0.85, pos = 4, col = 1)
-  }
-
-  # draw estimated p and clopper pearson interval
-  #if (counter3/counter2 >= 0.5){
-  #  points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
-  #  rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[1], border = "NA")
-  #}else{
-  #  points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
-  #  rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[2], border = "NA")
-  #}
-
-#using BinomCI for other method than clopper pearson
-if (counter3/counter2 >= 0.5){
-  points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
-  ci_prop = DescTools::BinomCI(counter3, n = counter2, conf.level = 1-(alpha/2), method ="wald" )
-  ci_low = ci_prop[2]
-  ci_up =  ci_prop[3]
-  rect(prop_min + d*ci_low, prop_y - 1, prop_min + d*ci_up, prop_y + 1, col = cols_trans[1], border = "NA")
-}else{
-  # if counter3/counter2 < 0.5
-  points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
-  ci_prop = DescTools::BinomCI(counter3, n = counter2, conf.level = 1-(alpha/2), method ="wald" )
-  ci_low = ci_prop[2]
-  ci_up =  ci_prop[3]
-  rect(prop_min + d*ci_low, prop_y - 1, prop_min + d*ci_up, prop_y + 1, col = cols_trans[2], border = "NA")
-}
+    # add text for test
+    text(67, 26, expression(paste(alpha, " = 5%", sep = "")), cex = 1.2, pos = 4)
+    text(67, 22, expression(paste(H[0], " : ", p[Trump], " = 50%", sep = "")), cex = 1.2, pos = 4)
+    text(67, 18, expression(paste(H[1], " : ", p[Trump], " > 50%", sep = "")), cex = 1.2, pos = 4)
+    pval = binom.test(x = counter3, n = counter2, p = 0.5, alternative = c("less"))$p.value
+    text(67, 14, paste("P-value = ", round(pval*100,2), "%", sep = ""), cex = 1.2, pos = 4)
 
 
+    # add text if pval is greater or smaller than alpha
+    if (pval > 0.05){
+      text(67, 10, expression(paste("P-value > ", alpha, sep = "")), cex = 1.2, pos = 4)
+    }else{
+      text(67, 10, expression(paste("P-value < ", alpha, sep = "")), cex = 1.2, pos = 4, col = cols[1])
+      # add rectangle whcih specify greater than .5 for
+      rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, col = cols_trans[2], border = "NA")
+    }
+
+    # write conclusion
+    if (pval < 0.05){
+      text(67, 6, expression(paste("We can conclude that", sep = "")), cex = 0.85, pos = 4, col = cols[1])
+      text(67, 4, expression(paste(p[Trump], " is larger than 50%", sep = "")), cex = 0.85, pos = 4, col = cols[1])
+    }else{
+      text(67, 6, expression(paste("We cannot reject that", sep = "")), cex = 0.85, pos = 4, col = 1)
+      text(67, 4, expression(paste(p[Trump], " is equal to 50%", sep = "")), cex = 0.85, pos = 4, col = 1)
+    }
+
+    # draw estimated p and clopper pearson interval
+    if (counter3/counter2 >= 0.5){
+      points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
+      rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[1], border = "NA")
+    }else{
+      points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
+      rect(prop_min + d*qbeta(1 - alpha/2, counter3 + 1, counter2 - counter3), prop_y - 1, prop_min + d*qbeta(alpha/2, counter3, counter2 - counter3 + 1), prop_y + 1, col = cols_trans[2], border = "NA")
+    }
+
+    # using BinomCI for other method than clopper pearson
+    # if (counter3/counter2 >= 0.5){
+    #   points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
+    #   ci_prop = DescTools::BinomCI(counter3, n = counter2, conf.level = 1-(alpha/2), method ="clopper-pearson" )
+    #   ci_low = ci_prop[2]
+    #   ci_up =  ci_prop[3]
+    #   rect(prop_min + d*ci_low, prop_y - 1, prop_min + d*ci_up, prop_y + 1, col = cols_trans[1], border = "NA")
+    # }else{
+    #   # if counter3/counter2 < 0.5
+    #   points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
+    #   ci_prop = DescTools::BinomCI(counter3, n = counter2, conf.level = 1-(alpha/2), method ="clopper-pearson" )
+    #   ci_low = ci_prop[2]
+    #   ci_up =  ci_prop[3]
+    #   rect(prop_min + d*ci_low, prop_y - 1, prop_min + d*ci_up, prop_y + 1, col = cols_trans[2], border = "NA")
+    # }
 
 
 
 
-  # if (counter3/counter2 >= 0.5){
-  #   points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
-  #   if (alpha == 0){
-  #     rect(prop_min + d, prop_y - 1,
-  #          prop_min,
-  #          prop_y + 1, col = cols_trans[1], border = "NA")
-  #   }else{
-  #     rect(prop_min + counter3/counter2*d + qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2), prop_y - 1,
-  #          prop_min + counter3/counter2*d - qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2),
-  #          prop_y + 1, col = cols_trans[1], border = "NA")
-  #   }
-  #
-  # }else{
-  #   if (alpha == 0){
-  #     points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
-  #     rect(prop_min + 1*d, prop_y - 1,
-  #          prop_min,
-  #          prop_y + 1, col = cols_trans[2], border = "NA")
-  #   }else{
-  #     points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
-  #     rect(prop_min + counter3/counter2*d + qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2), prop_y - 1,
-  #          prop_min + counter3/counter2*d - qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2),
-  #          prop_y + 1, col = cols_trans[2], border = "NA")
-  #
-  #   }
-  # }
+
+
+    # if (counter3/counter2 >= 0.5){
+    #   points(prop_min + counter3/counter2*d, prop_y, col = cols[1], cex = 2, pch = 16)
+    #   if (alpha == 0){
+    #     rect(prop_min + d, prop_y - 1,
+    #          prop_min,
+    #          prop_y + 1, col = cols_trans[1], border = "NA")
+    #   }else{
+    #     rect(prop_min + counter3/counter2*d + qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2), prop_y - 1,
+    #          prop_min + counter3/counter2*d - qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2),
+    #          prop_y + 1, col = cols_trans[1], border = "NA")
+    #   }
+    #
+    # }else{
+    #   if (alpha == 0){
+    #     points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
+    #     rect(prop_min + 1*d, prop_y - 1,
+    #          prop_min,
+    #          prop_y + 1, col = cols_trans[2], border = "NA")
+    #   }else{
+    #     points(prop_min + counter3/counter2*d, prop_y, col = cols[2], cex = 2, pch = 16)
+    #     rect(prop_min + counter3/counter2*d + qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2), prop_y - 1,
+    #          prop_min + counter3/counter2*d - qnorm(1-alpha/2)*d*sqrt(counter3/counter2*(1-counter3/counter2)/counter2),
+    #          prop_y + 1, col = cols_trans[2], border = "NA")
+    #
+    #   }
+    # }
   }
 }
 
