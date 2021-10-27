@@ -39,11 +39,11 @@ png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
 
 par(ask = FALSE, mar = c(3,0.75,0.75,0.75))
 nb = 61
-alpha = 0.05
-certain = T
+alpha = 0.2
+certain = F
 
 for (k in 1:nb){
-  Sys.sleep(.3)
+  #Sys.sleep(.3)
   # k=8
   Sys.sleep(.2)
   plot(NA, xlim = c(0, 85), ylim = c(-7, 40), ann = FALSE, axes = FALSE)
@@ -108,13 +108,13 @@ for (k in 1:nb){
     for (g in 1:counter2){
       if (my_sample[g] <= for_biden){
         counter3 = counter3 + 1
-        points((g-1) %% (n2/2) + 45, floor((g-1)/(n2/2)) + 1, col = cols[1], pch = 16, cex = 0.9)
+        points((g-1) %% (n2/2) + 55, floor((g-1)/(n2/2)) + 1, col = cols[1], pch = 16, cex = 0.9)
       }else{
         if (my_sample[g] <= (for_biden + for_trump)){
           counter4 = counter4 + 1
-          points((g-1) %% (n2/2) + 45, floor((g-1)/(n2/2)) + 1, col = cols[2], pch = 16, cex = 0.9)
+          points((g-1) %% (n2/2) + 55, floor((g-1)/(n2/2)) + 1, col = cols[2], pch = 16, cex = 0.9)
         }else{
-          points((g-1) %% (n2/2) + 45, floor((g-1)/(n2/2)) + 1, col = cols[3], pch = 16, cex = 0.9)
+          points((g-1) %% (n2/2) + 55, floor((g-1)/(n2/2)) + 1, col = cols[3], pch = 16, cex = 0.9)
         }
       }
     }
@@ -282,6 +282,6 @@ dev.off()
 png_files <- sprintf(png_path, 1:nb)
 gif_file <- tempfile(fileext = ".gif")
 library(gifski)
-gifski(png_files, "GIF/trump_no_test_alpha_certain.gif", delay = 0.5, loop = TRUE, progress = TRUE)
+gifski(png_files, "GIF/trump_no_test_alpha_20.gif", delay = 0.5, loop = TRUE, progress = TRUE)
 unlink(png_files)
 utils::browseURL(gif_file)

@@ -34,20 +34,20 @@ set.seed(16456 + 690)
 # 335  690 3389
 my_sample = sample(1:n)
 
-# library("gifski")
-# png_path <- file.path(tempdir(), "frame%03d.png")
-# png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
-par(ask = FALSE, mar = c(3,5,2,2))
+library("gifski")
+png_path <- file.path(tempdir(), "frame%03d.png")
+png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
+par(ask = FALSE, mar = c(6,5,2,2))
 nb = 61
 alpha = 0.05
 pval1 = pval2 = rep(NA, nb -1)
 for (k in 1:nb){
   # k=8
-  Sys.sleep(.2)
-  plot(NA, xlim = c(0, (nb-1)*10 + 30), ylim = c(0, 100), ann = TRUE, axes = FALSE, xlab = "Sample size",
+  #Sys.sleep(.2)
+  plot(NA, xlim = c(0, (nb-1)*10 + 80), ylim = c(0, 115), ann = TRUE, axes = FALSE, xlab = "Sample size",
        ylab = "Pvalue %")
-  axis(1)
-  axis(2)
+  axis(1, at = c(0, 100, 200, 300, 400, 500, 600))
+  axis(2, at = c(0, 20, 40, 60, 80, 100))
   counter = counter2 = counter3 = counter4 = 0
 
   # draw population
@@ -127,24 +127,30 @@ for (k in 1:nb){
     # x/ymin 0.18 0.22
     # x/ymax 0.93 0.8
     if (pval2[(k-1)] < 0.05){
-      grid.raster(trump, x = 0.18 + (0.93-0.18)*(k-1)/(nb-1),
-                  y = 0.15 + (0.9-0.15)*(pval2[k-1]), width=.04)
+      grid.raster(trump, x = 0.22 + (0.86-0.22)*(k-1)/(nb-1),
+                  y = 0.26 + (0.83-0.26)*(pval2[k-1]), width=.08)
+
+      text(350, 110, "Trump will win!!", cex = 2, col = cols[2])
+      grid.raster(trump, x = 0.32,
+                  y = 0.88, width=.08)
+
     }else{
-      grid.raster(trump, x = 0.18 + (0.93-0.18)*(k-1)/(nb-1),
-                  y = 0.15 + (0.9-0.15)*(pval2[k-1]), width=.08)
+      grid.raster(trump, x = 0.22 + (0.86-0.22)*(k-1)/(nb-1),
+                  y = 0.25 + (0.83-0.25)*(pval2[k-1]), width=.07 - 0.03*(pval2[k-1]))
     }
 
     if (pval1[(k-1)] < 0.05){
-      grid.raster(biden, x = 0.18 + (0.93-0.18)*(k-1)/(nb-1),
-                  y = 0.15 + (0.9-0.15)*(pval1[k-1]), width=.04)
+      grid.raster(biden, x = 0.22 + (0.86-0.22)*(k-1)/(nb-1),
+                  y = 0.26 + (0.83-0.26)*(pval1[k-1]), width=.08)
+
+      text(350, 110, "Biden will win!!", cex = 2, col = cols[1])
+      grid.raster(biden, x = 0.32,
+                  y = 0.88, width=.08)
+
     }else{
-      grid.raster(biden, x = 0.18 + (0.93-0.18)*(k-1)/(nb-1),
-                  y = 0.15 + (0.9-0.15)*(pval1[k-1]), width=.08)
+      grid.raster(biden, x = 0.22 + (0.86-0.22)*(k-1)/(nb-1),
+                  y = 0.25 + (0.83-0.25)*(pval1[k-1]), width=.07 - 0.03*(pval1[k-1]))
     }
-
-
-    # print homer in ll conrner
-    #grid.raster(biden, x=.9, y=.7, width=.06) # print bigger homer in ur corner
 
   }
 
@@ -154,8 +160,8 @@ for (k in 1:nb){
 dev.off()
 
 
-#png_files <- sprintf(png_path, 1:nb)
-#gif_file <- tempfile(fileext = ".gif")
-#gifski(png_files, "GIF/sample_ci0.gif", delay = 0.5, loop = TRUE, progress = TRUE)
-#unlink(png_files)
+png_files <- sprintf(png_path, 1:nb)
+gif_file <- tempfile(fileext = ".gif")
+gifski(png_files, "GIF/trump_ts.gif", delay = 0.5, loop = TRUE, progress = TRUE)
+unlink(png_files)
 #utils::browseURL(gif_file)

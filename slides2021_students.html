@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="author" content="Stéphane Guerrier" />
     <meta name="date" content="2021-10-28" />
-    <script src="slides_files/header-attrs-2.9/header-attrs.js"></script>
-    <link href="slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
-    <link href="slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <script src="slides2021_students_files/header-attrs-2.9/header-attrs.js"></script>
+    <link href="slides2021_students_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="slides2021_students_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="slides2021_students_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="my-css.css" type="text/css" />
   </head>
   <body>
@@ -123,9 +123,11 @@ In this class, we will focus on the last point:
 
 .turquoise["*A glass of red wine is as good as an hour at the gym*"?] 🙄
 
+
 &lt;div align="center"&gt;
 &lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&amp;end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
@@ -136,8 +138,16 @@ In this class, we will focus on the last point:
 .turquoise[What about coffee? Is it good?]
 
 &lt;div align="center"&gt;
-&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&amp;end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;video width='95%' &gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=104,199" type="video/mp4" &gt;
+&lt;/video&gt;
+ &lt;/div&gt; 
+ 
+ 
+&lt;!-- original --&gt;
+&lt;!-- &lt;div align="center"&gt; --&gt;
+&lt;!-- &lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&amp;end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
@@ -156,8 +166,15 @@ In this class, we will focus on the last point:
 .turquoise[Which study should I pick?]
 
 &lt;div align="center"&gt;
-&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&amp;end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;video width='70%' &gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=803,889" type="video/mp4" &gt;
+&lt;/video&gt;
+ &lt;/div&gt; 
+ 
+&lt;!-- original --&gt;
+&lt;!-- &lt;div align="center"&gt; --&gt;
+&lt;!-- &lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&amp;end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
@@ -173,128 +190,276 @@ In this class, we will focus on the last point:
 
 # Population and Sample - Example
 
-To fix ideas we will consider a simple example. On September 27 2020, the Swiss population voted on the .pink[*Loi fédérale sur la chasse et la protection des mammifères et oiseaux sauvages (Loi sur la chasse, LChP)*]. The proposal was not accepted as it only received 48% of supporting votes&lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Suppose that we were interested in collecting data .hi-purple[before the vote] to assess if this proposal was likely to be accepted. In this example, we will make the following assumptions for simplicity:
+.smallest[To fix ideas we will consider a simple example. The 2020 United States presidential election was the 59th quadrennial presidential election, held on November 3, 2020. According to the latest estimates, .hi.pink[Biden's team received 51.3% of the votes while Trump's received 46.8%] &lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Naturally, the result of American elections is not determined by the popular vote but suppose that we were interested in collecting data .hi-purple[before the vote] to assess if Biden's team will receive more than 50% of the votes].
 
-- The Swiss population of voters is composed of 1200 individuals (576 for the project, 624 against).
+&lt;img src="pics/trump2.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: Adapted from [fivethirtyeight.](https://projects.fivethirtyeight.com/trump-biden-election-map/)]
+
+.footnote[.smallest[👋 More details on the results can be found [here](https://en.wikipedia.org/wiki/2020_United_States_presidential_election).]]
+
+---
+
+# Population and Sample - Example
+
+.pull-left[.smaller[In this example, we will make the .purple[following assumptions for simplicity]:
+
+- The American population of voters is composed of 1200 individuals (616 for Biden, 561 for Trump and 23 independents).
 - We can perfectly sample the population (everyone is available, no double sampling, and the sampling is random).
 - People don't change their mind and they don't lie.
+]]
 
-.footnote[.smallest[👋] More details on the results can be found [here](https://www.bk.admin.ch/ch/f/pore/va/20200927/index.html).]
+.pull-right[
+
+&lt;img src="pics/trump_pop.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Proportion Estimation
+
+Suppose we ask `\(n\)` voters for which candidate (Biden, Trump or independent) they intend to vote in order to estimate the proportion of voters for Biden. For that we define the .hi.purple[random variables] `\(X_1, ..., X_n\)` where `\(X_i\)` is defined as:
+
+.saller[
+.center[
+`\(
+X_i = \left\{
+	\begin{array}{ll}
+		1  &amp; \mbox{if voter } i \mbox{ intends to vote for Biden}\\
+		0 &amp; \mbox{otherwise.}
+	\end{array}
+\right.
+\)`
+]
+]
+
+
+The random variables `\(X_1, ..., X_n\)` are called a (random) .hi.purple[sample] and we refer to `\(n\)` as the .hi.purple[sample size]. Let `\(p\)` denote the (true) proportion of voters for Biden (which in this case is 51.3%), we then write
+
+
+$$
+`\begin{align}
+\color{#e64173}{\Pr \Big(} {X_i = 1} \color{#e64173}{\Big)} = p,
+\end{align}`
+$$
+
+
+where `\(\color{#e64173}{\Pr (} A \color{#e64173}{)}\)` denotes the .pink[probability] of the .purple[event] `\(A\)`.
+
+---
+
+# Proportion Estimation
+
+Using the random variables `\(X_1, ..., X_n\)` we can define an .hi.purple[estimator] of `\(p\)`, which we often write as `\(\hat{p}\)` and is given by
+
+
+`$$\hat{p} = \frac{1}{n} \sum_{i=1}^n X_i = \frac{\color{#e64173}{m}}{\color{#6A5ACD}{n}},$$`
+
+
+where `\(\color{#e64173}{m}\)` denotes the number of voters in our sample in favor of Biden, and `\(\color{#6A5ACD}{n}\)` is the sample size (as described previously).
+
+An estimator is defined as a function of the data (i.e. `\(X_1, ..., X_n\)`), and therefore, theoretically any function of `\(X_1, ..., X_n\)` can be an estimator. However, in this case `\(\hat{p}\)` is the best possible estimator of `\(p\)` &lt;sup&gt;.smallest[👋]&lt;/sup&gt; and therefore it is not useful (in this case) to search for better estimators.
+
+.footnote[.smallest[👋] More precisely, this estimator is unbiased [(more info.)](https://en.wikipedia.org/wiki/Bias_of_an_estimator) and has the smallest possible variance [(more info.)](https://en.wikipedia.org/wiki/Variance) as it attains the Cramér–Rao bound [(more info.)](https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93Rao_bound).]
+ 
+---
+
+# Population and Sample - Example
+
+.pull-left[
+.smallest[
+Consider a sample of `\(n = 10\)` voters (randomly chosen from the population) as shown here 👉. In this case, we have 5 voters for Biden and 5 for Trump. We say that `$$x_1 = 1, ..., x_5 = 1, x_6 = 0, ..., x_{10} = 0$$` are .hi.purple[realizations] of the random variables `\(X_1, ..., X_{10}\)`.
+
+We can now compute our estimator on the observed data (i.e. the realizations) and we obtain `\(\hat{p} = 0.5\)`. Therefore, .pink[our best guess] based on the available data is that 50% of the voters will vote for Biden. Unfortunately, this doesn't really help us. So let's try with a bigger sample size... say `\(n = 40\)`.
+]]
+
+.pull-right[
+
+&lt;img src="pics/trump_sample1.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
 
 # Population and Sample - Example
 
-
-&lt;img src="pics/sample1.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
-
----
-
-# Population and Sample - Example
-
-&lt;img src="pics/sample2.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/trump_sample3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Population and Sample - Example
 
-&lt;img src="pics/sample3.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+.center[![](GIF/trump_sample.gif)]
 
 ---
 
 # Population and Sample - Example
 
-.center[![](GIF/sample.gif)]
+&lt;img src="pics/trump_sample_n2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Population and Sample - Example
 
-&lt;img src="pics/samplelast.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/trump_sample_n.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Population and Sample - Example
+
+- In our example, we are interested in knowing if `\(p\)`, a .pink[population-level quantity], is bigger or smaller than 50%. Unfortunately, `\(p\)` is generally unknown as we cannot access the whole population (otherwise let's not bother with Statistics! 🤪). Therefore, we use `\(\hat{p}\)` instead, a .purple[sample-dependent quantity].
+- However, as we can see, `\(\hat{p}\)` is .turquoise[random] in the sense that it can change depending on the collected sample (e.g. we get different answers when `\(n = 200\)`, where Trump is leading, and when `\(n = 600\)`, where Biden is leading). 
+- To address this issue, we need to assess the .hi.pink[uncertainty] of `\(\hat{p}\)` (i.e. assess how different `\(\hat{p}\)` and `\(p\)` can be).
+- Statistics can provides us many tools allowing to determine uncertainty as well as the associated .pink[decision-making risks].
 
 ---
 
 # How to measure uncertainty?
 
-- .smaller[.pink[Uncertainty can be measured in many different ways]].
-- .smaller[A common approach (in statistics) is to use .hi-purple[confidence intervals]]. 
-- .smaller[These intervals correspond to .pink[a range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a percentage (%).] 
-- .smaller[In our example, we are interested in the true (population) proportion of voters in favor of the proposal (48%). Using our second sample (8 against and 12 for) we could construct the following 90% confidence interval]:
+Uncertainty can be measured in many different ways. A common approach (in statistics) is to use .hi-purple[confidence intervals], which rely on the .hi.pink[Central Limit Theorem (CLT)] that states:
+
+.center[.turquoise["The sampling distribution of the sample mean approaches to a normal distribution as the sample size gets larger."]]
+
+Loosely speaking, we can translate the CLT as 
+
+`$$\bar{X} = \frac{1}{n} \sum_{i = 1}^n X_i \color{#e64173}{\overset{\cdot}{\sim}} \color{#6A5ACD}{\mathcal{N}(\mu, \sigma^2)},$$` 
+
+where `\(\color{#6A5ACD}{\mathcal{N}(\mu, \sigma^2)}\)` denotes a normal distribution with mean `\(\mu\)` and variance `\(\sigma^2\)` (typically computed using the data)&lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Here `\(\bar{X}\)` denotes the sample mean and `\(\color{#e64173}{\overset{\cdot}{\sim}}\)` represents ".pink[approximately distributed as]". 
+
+.footnote[.smallest[👋] Check out [expected value](https://en.wikipedia.org/wiki/Expected_value) and [variance](https://en.wikipedia.org/wiki/Variance).]
+
+---
+
+# How to measure uncertainty?
+
+In our example, we have 
+
+`$$\hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(p, \frac{p(1-p)}{n}\Bigg).$$`
+.pink[How to understand the practical implications of the CLT?] Informally, it means that when a measurement can be thought of as the sum (or the average) of .hi.purple[numerous] factors, its distribution tends to go to a normal distribution. For example, the height of adults can be thought of as the sum of their genetic information, diet, life style, ...
+
+---
+
+# Distribution of heights
+
+&lt;img src="pics/distribution-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+.center[![](GIF/sample_clt.gif)]
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt_n.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+.center[![](GIF/sample_clt2.gif)]
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt_n2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+People have used .pink[the Galton Board] as a practical device to demonstrate the CLT, in particular that with sufficient sample size the binomial distribution approximates a normal distribution.
+
+&lt;div align="center"&gt;
+&lt;iframe width="684" height="381" src="https://www.youtube.com/embed/Vo9Esp1yaC8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+---
+
+# Confidence Intervals
+
+Now that we learn about CLT, how can we use it to construct .hi-purple[confidence intervals]? 
+
+- .smaller[Confidence intervals correspond to .pink[a range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a percentage (%).] 
+- .smaller[In our example, we are interested in the true (population) proportion of voters in favor of Biden (51.3%). Using our sample of] `\(\small n=200\)` .smaller[, we had] `\(\small m =95\)` .smaller[and we can construct the following 95% confidence interval]:
 
 .pull-left[
-&lt;img src="pics/CI.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/ci.jpg" width="90%" style="display: block; margin: auto;" /&gt;
 ]
 
 .smaller[.pull-right[
-So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] the true proportion of voters for the project (48% in this case) is between say 40% and 80%.]
+So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], the true proportion of voters for Biden (51.3% in this case) is between 40.58% and 54.42%.]
 ]
 
 ---
 
-# How to measure uncertainty?
+# Confidence Intervals
 
-&lt;img src="pics/sample_ci1.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
-
----
-
-# If we had more data? 😳
-
-&lt;img src="pics/sample_ci2.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
-
----
-
-
-# If we had more data? 🤔
-
-&lt;img src="pics/sample_ci3.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+.smallest[How is this confidence interval computed? Using the CLT but replacing the unknown] `\(\small p\)` .smallest[with] `\(\small \hat{p}\)`.smallest[, we can write]
+`$$\small \hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\Bigg).$$`
+.smallest[So the] `\(\small 1-\alpha\)` .smallest[confidence interval for] `\(\small p\)` .smallest[is then given by]
+`$$\small \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}},$$`
+.smallest[where] `\(\small Z_{1-\alpha/2}\)` .smallest[corresponds to the] `\(\small 1-\alpha/2\)` .smallest[quantile of a] `\(\small \mathcal{N}(0,1)\)`.smallest[. For example,] `\(\small Z_{0.975}\approx 1.96\)` .smallest[for 95% confidence interval. Thus, we have]
+`$$\small \Pr \left(p \in \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \right) \approx 1-\alpha.$$`
+⚠️ .smallest[This means that a fraction of] `\(\small 100\times\alpha\)`.smallest[% of confidence intervals .hi.pink[don't include]] `\(\small p\)`. 
 
 ---
 
-# How to measure uncertainty?
+# Confidence Interval with `\(\alpha = 20\%\)`
 
-.center[![Gapminder](GIF/sample90.gif)]
-
----
-
-# How to measure uncertainty?
-
-&lt;img src="pics/sample_cin.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/plot_alpha_20_40_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Why 90%? Why not 95%?
+# Confidence Interval with `\(\alpha = 20\%\)`
 
-.center[![Gapminder](GIF/sample95.gif)]
-
----
-
-# Why 90%? Why not 95%?
-
-&lt;img src="pics/sample_cin2.jpeg" width="92%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/plot_alpha_20_100_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Is it too much? Maybe 60%?
+# Confidence Interval with `\(\alpha = 20\%\)`
 
-.center[![](GIF/sample60.gif)]
-
----
-
-# What if I want to be really sure? 99%?
-
-.center[![](GIF/sample99.gif)]
+&lt;img src="pics/plot_alpha_20_200_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# A bit more? How about 99.99%?
+# Confidence Intervals with `\(\alpha = 20\%\)`
 
-.center[![](GIF/sample9999.gif)]
+.center[![](GIF/trump_no_test_alpha_20.gif)]
 
 ---
 
-# What if I want to be certain? 100%? 😳
+# Why is 20%? Why not 5%?
 
-.center[![](GIF/sample100.gif)]
+.center[![](GIF/trump_no_test_alpha_05.gif)]
+
+---
+
+# What if I want to be certain? 😳
+
+.center[![](GIF/trump_no_test_alpha_certain.gif)]
 
 ---
 
@@ -318,7 +483,7 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 # How to test a (scientific) hypothesis?
 
-- .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%.]
+- .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%. P-values are generally preferred than confidence intervals when we want to assess the validity of a statement.]
 - .smaller[However, .hi-purple[p-values have been misused] many times because understanding what they mean is not intuitive.]
 
 &lt;div align="center"&gt;
@@ -333,10 +498,10 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 # How to test a (scientific) hypothesis?
 
-- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the voting proposal, one hypothesis is that the majority is against the proposal, and the other one is that there is no majority (the YES and NO are both at 50%)]
+- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the United States presidential election example, one hypothesis is that the majority votes for Biden's team, and the other one is that there is no majority (the YES and NO are both at 50%)]
 - .smaller[Each hypothesis .purple[excludes the other], so that one can .purple[exclude one in favor of the other] using the data.]
-- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothesis that the votes are 50%-50%.)]
-- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. proportion of NO is smaller than 50%).]
+- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothes is that the votes are 50%-50%.)]
+- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. Biden's team receives more than 50% of the votes).]
 - .smaller[Informally, .hi-pink[a p-value can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
 
 ---
@@ -353,40 +518,55 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 90%] t
 
 # Testing
 
-&lt;img src="pics/sample_pval1.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_1.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Testing
 
-&lt;img src="pics/sample_pval2.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_2.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Testing
 
-&lt;img src="pics/sample_pval3.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Testing
 
-.center[![](GIF/sample_pval.gif)]
+
+.center[![](GIF/gif_trump_p_hat_test_for_biden.gif)]
 
 ---
 
 # Testing
 
-&lt;img src="pics/sample_pvaln.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+
+.center[![](GIF/gif_trump_p_hat_test_for_trump.gif)]
+
+---
+
+
+
+# Testing
+
+
+
+&lt;img src="pics/plot_final_trump_sampling.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # What to remember about p-values
 
-- .smaller[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data.]
-- .smaller[Hence it might happen that, while the null hypothesis cannot be rejected (supposing it is true), the p-value is smaller than the set threshold. With the latter chosen as 5% then, on average, the (sample) p-value is below 5% .purple[one out of twenty times!]]
-- .smaller[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
-- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
+- .smallest[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data. In fact, .pink[p-value is highly related to the width of the corresponding confidence interval.] The narrower the confidence interval, the more likely that the true value is not included in the interval, and thus the smaller the p-value.]
+- .smallest[Hence it might happen that, while the null hypothesis cannot be rejected (supposing it is true), the p-value is smaller than the set threshold. With the latter chosen as 5% then, on average, the (sample) p-value is below 5% .purple[one out of twenty times!]]
+- .smallest[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
+- .smallest[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
 
 
 ---
@@ -515,14 +695,6 @@ HARKing is (arguably) playing an important role in the .hi-purple[replication cr
 &lt;br&gt;&lt;br&gt;
 &lt;img src="pics/green.png" width="37%" style="display: block; margin: auto;" /&gt;
 .tiny[Source: [xkcd](https://xkcd.com/882/)]
-
-
-
-
-
-
-
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
