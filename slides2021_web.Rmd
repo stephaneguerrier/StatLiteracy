@@ -292,7 +292,6 @@ include_graphics("pics/sampling.png")
 </div> 
 -->
  
-<!-- original -->
 <div align="center">
 <iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -325,7 +324,7 @@ include_graphics("pics/medical_studies2.png")
 
 <!-- original -->
 <div align="center">
-<iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]

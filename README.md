@@ -26,6 +26,6 @@ Dr. [Ed Rubin](https://edrub.in)
 **Note formats:**
 [.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021_web.html)
 \|
-[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides.pdf)
+[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021.pdf)
 \|
 [.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2021_web.Rmd)
