@@ -262,9 +262,19 @@ include_graphics("pics/sampling.png")
 
 .turquoise["*A glass of red wine is as good as an hour at the gym*"?] 🙄
 
+
 <div align="center">
-<iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<video width='70%' autoplay>
+<source src="video_compress/scientific_studies_john_oliver.mp4#t=19,50" type="video/mp4" >
+</video>
+ </div> 
+
+<!-- original youtube link -->
+<!-- <div align="center"> -->
+<!-- <iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- </div> -->
+
+
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
@@ -275,8 +285,16 @@ include_graphics("pics/sampling.png")
 .turquoise[What about coffee? Is it good?]
 
 <div align="center">
-<iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<video width='70%' autoplay>
+<source src="video_compress/scientific_studies_john_oliver.mp4#t=104,199" type="video/mp4" >
+</video>
+ </div> 
+ 
+ 
+<!-- original -->
+<!-- <div align="center"> -->
+<!-- <iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- </div> -->
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
@@ -297,8 +315,15 @@ include_graphics("pics/medical_studies2.png")
 .turquoise[Which study should I pick?]
 
 <div align="center">
-<iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<video width='70%' autoplay>
+<source src="video_compress/scientific_studies_john_oliver.mp4#t=803,889" type="video/mp4" >
+</video>
+ </div> 
+ 
+<!-- original -->
+<!-- <div align="center"> -->
+<!-- <iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<!-- </div> -->
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
