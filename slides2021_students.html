@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Stéphane Guerrier" />
     <meta name="date" content="2021-10-28" />
-    <script src="slides2021_students_files/header-attrs-2.9/header-attrs.js"></script>
     <link href="slides2021_students_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="slides2021_students_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="slides2021_students_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -125,8 +124,16 @@ In this class, we will focus on the last point:
 
 
 &lt;div align="center"&gt;
-&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&amp;end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;video width='95%'&gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=19,50" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+
+&lt;!-- original youtube link --&gt;
+&lt;!-- &lt;div align="center"&gt; --&gt;
+&lt;!-- &lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&amp;end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt; --&gt;
+&lt;!-- &lt;/div&gt; --&gt;
+
 
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
@@ -141,7 +148,7 @@ In this class, we will focus on the last point:
 &lt;video width='95%' &gt;
 &lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=104,199" type="video/mp4" &gt;
 &lt;/video&gt;
- &lt;/div&gt; 
+&lt;/div&gt; 
  
  
 &lt;!-- original --&gt;
@@ -166,10 +173,10 @@ In this class, we will focus on the last point:
 .turquoise[Which study should I pick?]
 
 &lt;div align="center"&gt;
-&lt;video width='70%' &gt;
+&lt;video width='90%' &gt;
 &lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=803,889" type="video/mp4" &gt;
 &lt;/video&gt;
- &lt;/div&gt; 
+&lt;/div&gt; 
  
 &lt;!-- original --&gt;
 &lt;!-- &lt;div align="center"&gt; --&gt;
@@ -418,7 +425,7 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], 
 # Confidence Intervals
 
 .smallest[How is this confidence interval computed? Using the CLT but replacing the unknown] `\(\small p\)` .smallest[with] `\(\small \hat{p}\)`.smallest[, we can write]
-`$$\small \hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\Bigg).$$`
+`$$\small \hat{p} \overset{\cdot}{\sim} \mathcal{N}\bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\bigg).$$`
 .smallest[So the] `\(\small 1-\alpha\)` .smallest[confidence interval for] `\(\small p\)` .smallest[is then given by]
 `$$\small \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}},$$`
 .smallest[where] `\(\small Z_{1-\alpha/2}\)` .smallest[corresponds to the] `\(\small 1-\alpha/2\)` .smallest[quantile of a] `\(\small \mathcal{N}(0,1)\)`.smallest[. For example,] `\(\small Z_{0.975}\approx 1.96\)` .smallest[for 95% confidence interval. Thus, we have]
@@ -498,15 +505,15 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], 
 
 # How to test a (scientific) hypothesis?
 
-- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the United States presidential election example, one hypothesis is that the majority votes for Biden's team, and the other one is that there is no majority (the YES and NO are both at 50%)]
+- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the United States presidential election example, one hypothesis is that the majority votes for Biden's team, and the other one is that there is no majority (the YES and NO are both at 50%).]
 - .smaller[Each hypothesis .purple[excludes the other], so that one can .purple[exclude one in favor of the other] using the data.]
-- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothes is that the votes are 50%-50%.)]
+- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothes is that the votes are 50%-50%).]
 - .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. Biden's team receives more than 50% of the votes).]
 - .smaller[Informally, .hi-pink[a p-value can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
 
 ---
 
-# Testing
+# Hypothesis testing
 
 - .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis].]
 - .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
@@ -516,48 +523,40 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], 
 
 ---
 
-# Testing
+# Hypothesis testing
 
 
-&lt;img src="pics/gif_trump_p_hat_test_for_biden_1.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
-
-# Testing
-
-
-&lt;img src="pics/gif_trump_p_hat_test_for_biden_2.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_1.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Testing
+# Hypothesis testing
 
-
-&lt;img src="pics/gif_trump_p_hat_test_for_biden_3.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_2.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Testing
+# Hypothesis testing
 
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_3.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Hypothesis testing
 
 .center[![](GIF/gif_trump_p_hat_test_for_biden.gif)]
 
 ---
 
-# Testing
-
+# Hypothesis testing
 
 .center[![](GIF/gif_trump_p_hat_test_for_trump.gif)]
 
 ---
 
+# Hypothesis testing
 
-
-# Testing
-
-
-
-&lt;img src="pics/plot_final_trump_sampling.png" width="90%" style="display: block; margin: auto;" /&gt;
+.center[![](GIF/trump_ts.gif)]
 
 ---
 
@@ -626,8 +625,16 @@ So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], 
 # More on P-Hacking 
 
 &lt;div align="center"&gt;
+&lt;video width='95%'&gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=209,242" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+
+&lt;!-- original youtube link --&gt;
+&lt;!--&lt;div align="center"&gt;
 &lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=209&amp;end=242" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+--&gt;
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
