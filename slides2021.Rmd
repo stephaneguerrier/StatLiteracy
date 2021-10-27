@@ -314,8 +314,8 @@ include_graphics("pics/medical_studies2.png")
 
 .turquoise[Which study should I pick?]
 
-<div align="center">
-<video width='90%' >
+<div align="center" controls>
+<video width='95%' >
 <source src="video_compress/scientific_studies_john_oliver.mp4#t=803,889" type="video/mp4" >
 </video>
 </div> 
@@ -820,6 +820,7 @@ include_graphics("pics/phacking.png")
 
 # More on P-Hacking 
 
+
 <div align="center">
 <video width='95%'>
 <source src="video_compress/scientific_studies_john_oliver.mp4#t=209,242" type="video/mp4">
@@ -831,6 +832,7 @@ include_graphics("pics/phacking.png")
 <iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=209&end=242" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 -->
+
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
 
