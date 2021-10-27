@@ -395,68 +395,17 @@ Now that we learn about CLT, how can we use it to construct .hi-purple[confidenc
 So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], the true proportion of voters for Biden (51.3% in this case) is between 40.58% and 54.42%.]
 ]
 
-
 ---
 
 # Confidence Intervals
 
-How is this confidence interval computed? We recall that by CLT, 
-
-`$$\hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(p, \frac{p(1-p)}{n}\Bigg).$$`
-However, as we .hi.purple[do not know] the true value of `\(p\)` in practice, we replace it with the .hi.purple[best guess] we have, which is `\(\hat{p}\)`. We then can write
-
-`$$\hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\Bigg).$$`
-
-The `\(1-\alpha\)` confidence interval for `\(p\)` is then given by
-
-`$$\color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}}.$$`
-
-But what is `\(Z_{1-\alpha/2}\)`? 🤓
-
----
-
-# Confidence Intervals
-
-`\(Z_{1-\alpha/2}\)` corresponds to the `\(1-\alpha/2\)` quantile of a standard normal distribution `\(\mathcal{N}(0,1)\)`, that is, 
-
-.center[ 
-`\(Z_{1-\alpha/2}\)` is such that `\(\Pr(Z \leq Z_{1-\alpha/2}) = 1-\alpha/2\)` where `\(Z \sim \mathcal{N}(0,1)\)`.
-]
-
-.pull-left[
-
-&lt;img src="pics/standard_normal.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-]
-
-.pull-right[
-- For 90% confidence interval, `\(Z_{0.95} \approx 1.64\)`. 
-- .pink[For 95% confidence interval,] `\(\color{#e64173}{Z_{0.975} \approx 1.96}\)`.pink[.]
-- For 99% confidence interval, `\(Z_{0.995} \approx 2.58\)`. 
-]
----
-
-# Confidence Intervals
-
-Therefore, a confidence interval corresponds to a range of values that contains the true unknown population-level quantity we are considering with a probability of approximately `\(1-\alpha\)` (typically 95%).
-
-Basically, we have
-
-`$$\Pr \left(p \in \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \right) \approx 1-\alpha.$$`
-
-⚠️ This means that a fraction of `\(100\times\alpha\)`% of confidence intervals .hi.pink[don't include] `\(p\)`. 
-
----
-
-# Confidence Intervals
-
-.center[![](GIF/sample_clt3.gif)]
-
----
-
-# Confidence Intervals
-
-&lt;img src="pics/ci2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+.smallest[How is this confidence interval computed? Using the CLT but replacing the unknown] `\(\small p\)` .smallest[with] `\(\small \hat{p}\)`.smallest[, we can write]
+`$$\small \hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\Bigg).$$`
+.smallest[So the] `\(\small 1-\alpha\)` .smallest[confidence interval for] `\(\small p\)` .smallest[is then given by]
+`$$\small \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}},$$`
+.smallest[where] `\(\small Z_{1-\alpha/2}\)` .smallest[corresponds to the] `\(\small 1-\alpha/2\)` .smallest[quantile of a] `\(\small \mathcal{N}(0,1)\)`.smallest[. For example,] `\(\small Z_{0.975}\approx 1.96\)` .smallest[for 95% confidence interval. Thus, we have]
+`$$\small \Pr \left(p \in \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \right) \approx 1-\alpha.$$`
+⚠️ .smallest[This means that a fraction of] `\(\small 100\times\alpha\)`.smallest[% of confidence intervals .hi.pink[don't include]] `\(\small p\)`. 
 
 ---
 
@@ -504,6 +453,7 @@ print(paste("A ", (1 - alpha)*100, "% confidence interval is given by (",
 ```
 ]
 ]
+
 
 ---
 
@@ -563,7 +513,7 @@ print(paste("A ", (1 - alpha)*100, "% confidence interval is given by (",
 
 # How to test a (scientific) hypothesis?
 
-- .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%.]
+- .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%. P-values are generally preferred than confidence intervals when we want to assess the validity of a statement.]
 - .smaller[However, .hi-purple[p-values have been misused] many times because understanding what they mean is not intuitive.]
 
 &lt;div align="center"&gt;
@@ -578,10 +528,10 @@ print(paste("A ", (1 - alpha)*100, "% confidence interval is given by (",
 
 # How to test a (scientific) hypothesis?
 
-- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the voting proposal, one hypothesis is that the majority is against the proposal, and the other one is that there is no majority (the YES and NO are both at 50%)]
+- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the United States presidential election example, one hypothesis is that the majority votes for Biden's team, and the other one is that there is no majority (the YES and NO are both at 50%)]
 - .smaller[Each hypothesis .purple[excludes the other], so that one can .purple[exclude one in favor of the other] using the data.]
-- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothesis that the votes are 50%-50%.)]
-- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. proportion of NO is smaller than 50%).]
+- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothes is that the votes are 50%-50%.)]
+- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. Biden's team receives more than 50% of the votes).]
 - .smaller[Informally, .hi-pink[a p-value can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
 
 ---
@@ -638,10 +588,10 @@ LIONEL: TO CHANGE
 
 # What to remember about p-values
 
-- .smaller[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data.]
-- .smaller[Hence it might happen that, while the null hypothesis cannot be rejected (supposing it is true), the p-value is smaller than the set threshold. With the latter chosen as 5% then, on average, the (sample) p-value is below 5% .purple[one out of twenty times!]]
-- .smaller[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
-- .smaller[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
+- .smallest[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data. In fact, .pink[p-value is highly related to the width of the corresponding confidence interval.] The narrower the confidence interval, the more likely that the true value is not included in the interval, and thus the smaller the p-value.]
+- .smallest[Hence it might happen that, while the null hypothesis cannot be rejected (supposing it is true), the p-value is smaller than the set threshold. With the latter chosen as 5% then, on average, the (sample) p-value is below 5% .purple[one out of twenty times!]]
+- .smallest[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
+- .smallest[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
 
 
 ---
