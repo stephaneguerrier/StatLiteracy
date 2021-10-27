@@ -618,7 +618,7 @@ print(paste("A ", (1 - alpha)*100, "% confidence interval is given by (",
 # Confidence Interval with $\alpha = 20\%$
 
 ```{R, out.width = "100%", echo = F}
-include_graphics("pics/sample_ci_trump1.jpeg")
+include_graphics("pics/plot_alpha_20_40_voters.png")
 ```
 
 ---
@@ -626,7 +626,7 @@ include_graphics("pics/sample_ci_trump1.jpeg")
 # Confidence Interval with $\alpha = 20\%$
 
 ```{R, out.width = "100%", echo = F}
-include_graphics("pics/sample_ci_trump2.jpeg")
+include_graphics("pics/plot_alpha_20_100_voters.png")
 ```
 
 ---
@@ -634,26 +634,26 @@ include_graphics("pics/sample_ci_trump2.jpeg")
 # Confidence Interval with $\alpha = 20\%$
 
 ```{R, out.width = "100%", echo = F}
-include_graphics("pics/sample_ci_trump3.jpeg")
+include_graphics("pics/plot_alpha_20_200_voters.png")
 ```
 
 ---
 
 # Confidence Intervals with $\alpha = 20\%$
 
-.center[![](GIF/sample_ci.gif)]
+.center[![](GIF/trump_no_test_alpha_20.gif)]
 
 ---
 
 # Why is 20%? Why not 5%?
 
-.center[![](GIF/sample_ci5.gif)]
+.center[![](GIF/trump_no_test_alpha_05.gif)]
 
 ---
 
 # What if I want to be certain? 😳
 
-.center[![](GIF/sample_ci0.gif)]
+.center[![](GIF/trump_no_test_alpha_certain.gif)]
 
 ---
 

@@ -32,15 +32,15 @@ set.seed(16456 + 690)
 # 335  690 3389
 my_sample = sample(1:n)
 
-# library("gifski")
-# png_path <- file.path(tempdir(), "frame%03d.png")
-# png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
+library("gifski")
+png_path <- file.path(tempdir(), "frame%03d.png")
+png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
 par(ask = FALSE, mar = c(3,0.75,0.75,0.75))
 nb = 61
 alpha = 0.05
 
 for (k in 1:nb){
-  # k=8
+  # k=3
   Sys.sleep(.5)
   plot(NA, xlim = c(0, 85), ylim = c(-7, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
@@ -191,15 +191,21 @@ for (k in 1:nb){
     if (pval > 0.05){
       text(67, 10, expression(paste("P-value > ", alpha, sep = "")), cex = 1.2, pos = 4)
     }else{
-      text(67, 10, expression(paste("P-value < ", alpha, sep = "")), cex = 1.2, pos = 4, col = cols[1])
-      # add rectangle whcih specify greater than .5 for
-      rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, col = cols_trans[2], border = "NA")
-    }
+      text(67, 10, expression(paste("P-value < ", alpha, sep = "")), cex = 1.2, pos = 4, col = cols[2])
+      # add rectangle whcih specify greater than .5 for trump
+      # rect(29.5 + delta - 1, 32.6 - 1, 29 + delta + 1.5, 32 + 1.5, col = cols_trans[2], border = "NA")
+      rect(29.5 + delta - 1 + 5,
+           32.6 - 1,
+           29 + delta + 1.5 +5,
+           32 + 1.5,
+           col = cols_trans[2], border = "NA")
+
+      }
 
     # write conclusion
     if (pval < 0.05){
-      text(67, 6, expression(paste("We can conclude that", sep = "")), cex = 0.85, pos = 4, col = cols[1])
-      text(67, 4, expression(paste(p[Trump], " is larger than 50%", sep = "")), cex = 0.85, pos = 4, col = cols[1])
+      text(67, 6, expression(paste("We can conclude that", sep = "")), cex = 0.85, pos = 4, col = cols[2])
+      text(67, 4, expression(paste(p[Trump], " is larger than 50%", sep = "")), cex = 0.85, pos = 4, col = cols[2])
     }else{
       text(67, 6, expression(paste("We cannot reject that", sep = "")), cex = 0.85, pos = 4, col = 1)
       text(67, 4, expression(paste(p[Trump], " is equal to 50%", sep = "")), cex = 0.85, pos = 4, col = 1)
@@ -267,8 +273,8 @@ for (k in 1:nb){
 dev.off()
 
 
-#png_files <- sprintf(png_path, 1:nb)
-#gif_file <- tempfile(fileext = ".gif")
-#gifski(png_files, "GIF/sample_ci0.gif", delay = 0.5, loop = TRUE, progress = TRUE)
-#unlink(png_files)
-#utils::browseURL(gif_file)
+png_files <- sprintf(png_path, 1:nb)
+gif_file <- tempfile(fileext = ".gif")
+gifski(png_files, "GIF/gif_trump_p_hat_test_for_trump.gif", delay = 0.5, loop = TRUE, progress = TRUE)
+unlink(png_files)
+utils::browseURL(gif_file)

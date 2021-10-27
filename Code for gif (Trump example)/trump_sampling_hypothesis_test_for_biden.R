@@ -41,7 +41,7 @@ alpha = 0.05
 
 for (k in 1:nb){
   # k=8
-  Sys.sleep(.2)
+  # Sys.sleep(.2)
   plot(NA, xlim = c(0, 85), ylim = c(-7, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
   text(15 + 5, 40, "Population", cex = 1.25)
@@ -267,8 +267,9 @@ if (counter3/counter2 >= 0.5){
 dev.off()
 
 
-#png_files <- sprintf(png_path, 1:nb)
-#gif_file <- tempfile(fileext = ".gif")
-#gifski(png_files, "GIF/sample_ci0.gif", delay = 0.5, loop = TRUE, progress = TRUE)
-#unlink(png_files)
-#utils::browseURL(gif_file)
+png_files <- sprintf(png_path, 1:nb)
+gif_file <- tempfile(fileext = ".gif")
+library(gifski)
+gifski(png_files, "GIF/gif_trump_p_hat_test_for_biden.gif", delay = 0.5, loop = TRUE, progress = TRUE)
+unlink(png_files)
+utils::browseURL(gif_file)

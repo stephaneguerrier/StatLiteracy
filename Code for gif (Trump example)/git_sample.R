@@ -19,7 +19,8 @@ par(ask = FALSE, mar = c(3,0.75,0.75,0.75))
 nb = 61
 
 for (k in 1:nb){
-  Sys.sleep(.3)
+  k = 2
+  # Sys.sleep(.3)
   plot(NA, xlim = c(0, 85), ylim = c(0, 40), ann = FALSE, axes = FALSE)
   counter = counter2 = counter3 = counter4 = 0
   text(15 + 5, 40, "Population", cex = 1.25)
