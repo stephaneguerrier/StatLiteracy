@@ -36,7 +36,7 @@ my_sample = sample(1:n)
 
 library("gifski")
 png_path <- file.path(tempdir(), "frame%03d.png")
-png(png_path, units="px", width=1600*1.4, height=1600*1.13, res=300)
+png(png_path, units="px", width=1600*1.4, height=1600*1.4, res=300)
 par(ask = FALSE, mar = c(6,5,2,2))
 nb = 61
 alpha = 0.05
@@ -162,6 +162,6 @@ dev.off()
 
 png_files <- sprintf(png_path, 1:nb)
 gif_file <- tempfile(fileext = ".gif")
-gifski(png_files, "GIF/trump_ts.gif", delay = 0.5, loop = TRUE, progress = TRUE)
+gifski(png_files, "GIF/trump_ts_square.gif", delay = 0.5, loop = TRUE, progress = TRUE)
 unlink(png_files)
 #utils::browseURL(gif_file)

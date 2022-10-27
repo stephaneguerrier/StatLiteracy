@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Statistical Literacy</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Stéphane Guerrier" />
+    <meta name="date" content="2022-10-27" />
+    <script src="slides2022_web_files/header-attrs-2.9/header-attrs.js"></script>
+    <link href="slides2022_web_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="slides2022_web_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="slides2022_web_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Statistical Literacy
+## Analyse et traitement de l’information   Comprendre le numérique
+### Stéphane Guerrier
+### 27 October 2022
+
+---
+
+
+
+
+
+
+# What is statistics?
+
+.pull-left[
+.smaller[.hi-pink[Statistics] is a science that uses mathematics and computer science to deal with the collection, analysis, interpretation, and presentation of masses of numerical data. Informally, it is the .pink[science of learning from data]. 🧐]
+&lt;img src="pics/stat.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [luminousmen](luminousmen.com)]
+]
+
+.pull-right[
+.smaller[.hi-purple[Statistics] is a crucial part of our life. However, .purple[statistical methods are often consciously (or not) misused] (but how? 🤔). This can lead to contradictory studies and conclusions (as seen during the current COVID-19 pandemic).]
+
+&lt;img src="pics/data-torture.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: [Atoz Markets](https://atozmarkets.com/news/untold-reality-of-p-hacking-in-finance/)]
+
+]
+
+---
+
+# What is statistical literacy?
+
+
+.smallest[.hi-pink[Statistical Literacy] can be defined as follows:]
+- .smallest[The ability to .pink[understand data], or arguments that use data.]
+- .smallest[Being able to apply .pink[critical thinking] about numbers and about .pink[statistics used as evidence in arguments].]
+- .smallest[Understanding how statistical associations are used to assess causal connections.]  
+
+.pull-left[
+&lt;img src="pics/correlation.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+.tiny[Source: [xkcd](xkcd.com/552)]
+
+👋 .smallest[If you want to know more about these comic strips take a look [here](https://www.explainxkcd.com/wiki/index.php/552:_Correlation).]
+]
+
+.smallest[.hi-purple[Statistical literacy is now becoming an essential skill]. It is, for example, needed by .purple[anyone who tries to learn new information from data]. .turquoise[Scientists also need to develop statistical literacy so that they can produce both rigorous and reproducible research.]]
+
+---
+
+# (Mis)Understanding statistical results
+
+&lt;img src="pics/conditional_risk.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: [xkcd](xkcd.com/795)]
+
+👋 .smaller[If you want to know more about these comic strips take a look [here](https://www.explainxkcd.com/wiki/index.php/795:_Conditional_Risk).]
+
+---
+
+# How can statistics be useful?
+
+As mentioned previously, statistics is the .pink[science of learning from data]. It can be used (among others) to:
+1. .purple[Visualize data] (e.g. propagation of COVID-19 in different countries).
+2. .purple[Understand and interpret data] (e.g. main causes of cancer). 
+3. .purple[Make predictions] (e.g. predicting unemployment or risk indices).
+4. .hi-pink[Assess the validity of a hypothesis].
+
+In this class, we will focus on the last point:
+''.pink[*how to assess the validity of a hypothesis using statistics?*]''. More precisely, we will discuss how statistical methods can be used to evaluate claims (hypotheses) such as:
+
+1. Coffee consumption increases blood pressure (really 🙄 ☕?).
+2. Republican politicians are bad/good for the American Economy.
+3. A glass of red wine is as good as an hour at the gym (🍷 🏃 😆).
+
+---
+
+# How does it work?
+
+- Statistical methods are based on several fundamental concepts, the most central of which is to consider the information available (in the form of data) resulting from a .hi-pink[random process]. 🙉
+- As such, the data represent a .hi-turquoise[random sample] of a totally or conceptually accessible .hi-turquoise[population].
+
+&lt;img src="pics/sampling.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: [luminousmen](luminousmen.com)]
+
+---
+
+# How does it work?
+
+- Statistics allows to determine the .hi-pink[decision-making risks] (in the form of probabilities) associated with learning (decisions) based on the analysis of data extracted from samples. .slate[This allows to evaluate the validity of a claim] (such as the ones we discussed previously). 
+- .purple[Understanding and knowing how to interpret statistical analyses is therefore becoming an increasingly vital skill].
+- In some sense, .hi-pink[statistics plays a crucial role in our life] as new discoveries (obtained using statistical methods) directly impact us&lt;sup&gt;.smallest[👋]&lt;/sup&gt;.
+- However, understanding statistical results is not intuitive. There exist many pitfalls such as .purple[p-hacking] or .purple[HARKing] (e.g. why are there so many contradictory studies? Is Hydroxychloroquine working or not?).
+
+
+
+.footnote[.smallest[👋] This  is essentially true in the area of .hi-purple[Big Data] where the discovery of patterns and/or signals hidden in massive amounts of data is increasingly becoming one of the major challenges faced by modern scientific research.]
+
+---
+
+# So many studies?
+
+.turquoise["*A glass of red wine is as good as an hour at the gym*"?] 🙄
+
+&lt;!--
+&lt;div align="center"&gt;
+&lt;video width='95%'&gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=19,50" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+--&gt;
+
+&lt;!-- original youtube link --&gt;
+&lt;div align="center"&gt;
+&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=19&amp;end=50" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+.tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
+
+---
+
+# Contraditory studies?
+
+.turquoise[What about coffee? Is it good?]
+
+&lt;!--
+&lt;div align="center"&gt;
+&lt;video width='95%' &gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=104,199" type="video/mp4" &gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+--&gt;
+ 
+&lt;div align="center"&gt;
+&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=104&amp;end=199" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+.tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
+
+---
+
+# So everything causes cancer?
+
+&lt;img src="pics/medical_studies2.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+.footnote[.smallest[👋] Read the original article: "*This is why you shouldn’t believe that exciting new medical study*" [here](https://www.vox.com/2015/3/23/8264355/research-study-hype).]
+
+---
+
+# What are the consequences?
+
+.turquoise[Which study should I pick?]
+
+&lt;!-- 
+&lt;div align="center" controls&gt;
+&lt;video width='95%' &gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=803,889" type="video/mp4" &gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+--&gt;
+
+&lt;!-- original --&gt;
+&lt;div align="center"&gt;
+&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=803&amp;end=889" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+.tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
+
+---
+
+# The Hydroxychloroquine Controversy 🦠
+
+.smallest[Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear. The timeline can be found [here](https://en.wikipedia.org/wiki/Chloroquine_and_hydroxychloroquine_during_the_COVID-19_pandemic).]
+
+&lt;img src="pics/FACT.jpg" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Population and Sample - Example
+
+.smallest[To fix ideas we will consider a simple example. The 2020 United States presidential election was the 59th quadrennial presidential election, held on November 3, 2020. According to the latest estimates, .hi.pink[Biden's team received 51.3% of the votes while Trump's received 46.8%] &lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Naturally, the result of American elections is not determined by the popular vote but suppose that we were interested in collecting data .hi-purple[before the vote] to assess if Biden's team will receive more than 50% of the votes].
+
+&lt;img src="pics/trump2.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: Adapted from [fivethirtyeight.](https://projects.fivethirtyeight.com/trump-biden-election-map/)]
+
+.footnote[.smallest[👋 More details on the results can be found [here](https://en.wikipedia.org/wiki/2020_United_States_presidential_election).]]
+
+---
+
+# Population and Sample - Example
+
+.pull-left[.smaller[In this example, we will make the .purple[following assumptions for simplicity]:
+
+- The American population of voters is composed of 1200 individuals (616 for Biden, 561 for Trump and 23 independents).
+- We can perfectly sample the population (everyone is available, no double sampling, and the sampling is random).
+- People don't change their mind and they don't lie.
+]]
+
+.pull-right[
+
+&lt;img src="pics/trump_pop.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Proportion Estimation
+
+Suppose we ask `\(n\)` voters for which candidate (Biden, Trump or independent) they intend to vote in order to estimate the proportion of voters for Biden. For that we define the .hi.purple[random variables] `\(X_1, ..., X_n\)` where `\(X_i\)` is defined as:
+
+.saller[
+.center[
+`\(
+X_i = \left\{
+	\begin{array}{ll}
+		1  &amp; \mbox{if voter } i \mbox{ intends to vote for Biden}\\
+		0 &amp; \mbox{otherwise.}
+	\end{array}
+\right.
+\)`
+]
+]
+
+
+The random variables `\(X_1, ..., X_n\)` are called a (random) .hi.purple[sample] and we refer to `\(n\)` as the .hi.purple[sample size]. Let `\(p\)` denote the (true) proportion of voters for Biden (which in this case is 51.3%), we then write
+
+
+$$
+`\begin{align}
+\color{#e64173}{\Pr \Big(} {X_i = 1} \color{#e64173}{\Big)} = p,
+\end{align}`
+$$
+
+
+where `\(\color{#e64173}{\Pr (} A \color{#e64173}{)}\)` denotes the .pink[probability] of the .purple[event] `\(A\)`.
+
+---
+
+# Proportion Estimation
+
+Using the random variables `\(X_1, ..., X_n\)` we can define an .hi.purple[estimator] of `\(p\)`, which we often write as `\(\hat{p}\)` and is given by
+
+
+`$$\hat{p} = \frac{1}{n} \sum_{i=1}^n X_i = \frac{\color{#e64173}{m}}{\color{#6A5ACD}{n}},$$`
+
+
+where `\(\color{#e64173}{m}\)` denotes the number of voters in our sample in favor of Biden, and `\(\color{#6A5ACD}{n}\)` is the sample size (as described previously).
+
+An estimator is defined as a function of the data (i.e. `\(X_1, ..., X_n\)`), and therefore, theoretically any function of `\(X_1, ..., X_n\)` can be an estimator. However, in this case `\(\hat{p}\)` is the best possible estimator of `\(p\)` &lt;sup&gt;.smallest[👋]&lt;/sup&gt; and therefore it is not useful (in this case) to search for better estimators.
+
+.footnote[.smallest[👋] More precisely, this estimator is unbiased [(more info.)](https://en.wikipedia.org/wiki/Bias_of_an_estimator) and has the smallest possible variance [(more info.)](https://en.wikipedia.org/wiki/Variance) as it attains the Cramér–Rao bound [(more info.)](https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93Rao_bound).]
+ 
+---
+
+# Population and Sample - Example
+
+.pull-left[
+.smallest[
+Consider a sample of `\(n = 10\)` voters (randomly chosen from the population) as shown here 👉. In this case, we have 5 voters for Biden and 5 for Trump. We say that `$$x_1 = 1, ..., x_5 = 1, x_6 = 0, ..., x_{10} = 0$$` are .hi.purple[realizations] of the random variables `\(X_1, ..., X_{10}\)`.
+
+We can now compute our estimator on the observed data (i.e. the realizations) and we obtain `\(\hat{p} = 0.5\)`. Therefore, .pink[our best guess] based on the available data is that 50% of the voters will vote for Biden. Unfortunately, this doesn't really help us. So let's try with a bigger sample size... say `\(n = 40\)`.
+]]
+
+.pull-right[
+
+&lt;img src="pics/trump_sample1.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Population and Sample - Example
+
+&lt;img src="pics/trump_sample3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Population and Sample - Example
+
+.center[![](GIF/trump_sample.gif)]
+
+---
+
+# Population and Sample - Example
+
+&lt;img src="pics/trump_sample_n2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Population and Sample - Example
+
+&lt;img src="pics/trump_sample_n.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Population and Sample - Example
+
+- In our example, we are interested in knowing if `\(p\)`, a .pink[population-level quantity], is bigger or smaller than 50%. Unfortunately, `\(p\)` is generally unknown as we cannot access the whole population (otherwise let's not bother with Statistics! 🤪). Therefore, we use `\(\hat{p}\)` instead, a .purple[sample-dependent quantity].
+- However, as we can see, `\(\hat{p}\)` is .turquoise[random] in the sense that it can change depending on the collected sample (e.g. we get different answers when `\(n = 200\)`, where Trump is leading, and when `\(n = 600\)`, where Biden is leading). 
+- To address this issue, we need to assess the .hi.pink[uncertainty] of `\(\hat{p}\)` (i.e. assess how different `\(\hat{p}\)` and `\(p\)` can be).
+- Statistics can provides us many tools allowing to determine uncertainty as well as the associated .pink[decision-making risks].
+
+---
+
+# How to measure uncertainty?
+
+Uncertainty can be measured in many different ways. A common approach (in statistics) is to use .hi-purple[confidence intervals], which rely on the .hi.pink[Central Limit Theorem (CLT)] that states:
+
+.center[.turquoise["The sampling distribution of the sample mean approaches to a normal distribution as the sample size gets larger."]]
+
+Loosely speaking, we can translate the CLT as 
+
+`$$\bar{X} = \frac{1}{n} \sum_{i = 1}^n X_i \color{#e64173}{\overset{\cdot}{\sim}} \color{#6A5ACD}{\mathcal{N}(\mu, \sigma^2)},$$` 
+
+where `\(\color{#6A5ACD}{\mathcal{N}(\mu, \sigma^2)}\)` denotes a normal distribution with mean `\(\mu\)` and variance `\(\sigma^2\)` (typically computed using the data)&lt;sup&gt;.smallest[👋]&lt;/sup&gt;. Here `\(\bar{X}\)` denotes the sample mean and `\(\color{#e64173}{\overset{\cdot}{\sim}}\)` represents ".pink[approximately distributed as]". 
+
+.footnote[.smallest[👋] Check out [expected value](https://en.wikipedia.org/wiki/Expected_value) and [variance](https://en.wikipedia.org/wiki/Variance).]
+
+---
+
+# How to measure uncertainty?
+
+In our example, we have 
+
+`$$\hat{p} \overset{\cdot}{\sim} \mathcal{N}\Bigg(p, \frac{p(1-p)}{n}\Bigg).$$`
+.pink[How to understand the practical implications of the CLT?] Informally, it means that when a measurement can be thought of as the sum (or the average) of .hi.purple[numerous] factors, its distribution tends to go to a normal distribution. For example, the height of adults can be thought of as the sum of their genetic information, diet, life style, ...
+
+---
+
+# Distribution of heights
+
+&lt;img src="pics/distribution-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+.center[![](GIF/sample_clt.gif)]
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt_n.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+.center[![](GIF/sample_clt2.gif)]
+
+---
+
+# Central Limit Theorem - Example
+
+&lt;img src="pics/sample_clt_n2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Central Limit Theorem - Example
+
+People have used .pink[the Galton Board] as a practical device to demonstrate the CLT, in particular that with sufficient sample size the binomial distribution approximates a normal distribution.
+
+&lt;div align="center"&gt;
+&lt;iframe width="684" height="381" src="https://www.youtube.com/embed/Vo9Esp1yaC8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+---
+
+# Confidence Intervals
+
+Now that we learn about CLT, how can we use it to construct .hi-purple[confidence intervals]? 
+
+- .smaller[Confidence intervals correspond to .pink[a range of values that are likely to include the population value with a certain level of confidence]. The level of confidence is a probability expressed as a percentage (%).] 
+- .smaller[In our example, we are interested in the true (population) proportion of voters in favor of Biden (51.3%). Using our sample of] `\(\small n=200\)` .smaller[, we had] `\(\small m =95\)` .smaller[and we can construct the following 95% confidence interval]:
+
+.pull-left[
+&lt;img src="pics/ci.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+.smaller[.pull-right[
+So what does it mean? 🤔 It means that with a .hi-purple[probability of 95%], the true proportion of voters for Biden (51.3% in this case) is between 40.58% and 54.42%.]
+]
+
+---
+
+# Confidence Intervals
+
+.smallest[How is this confidence interval computed? Using the CLT but replacing the unknown] `\(\small p\)` .smallest[with] `\(\small \hat{p}\)`.smallest[, we can write]
+`$$\small \hat{p} \overset{\cdot}{\sim} \mathcal{N}\bigg(\color{#e64173}{\hat{p}}, \color{#6A5ACD}{\frac{\hat{p}(1-\hat{p})}{n}}\bigg).$$`
+.smallest[So the] `\(\small 1-\alpha\)` .smallest[confidence interval for] `\(\small p\)` .smallest[is then given by]
+`$$\small \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}},$$`
+.smallest[where] `\(\small Z_{1-\alpha/2}\)` .smallest[corresponds to the] `\(\small 1-\alpha/2\)` .smallest[quantile of a] `\(\small \mathcal{N}(0,1)\)`.smallest[. For example,] `\(\small Z_{0.975}\approx 1.96\)` .smallest[for 95% confidence interval. Thus, we have]
+`$$\small \Pr \left(p \in \color{#e64173}{\hat{p}} \pm Z_{1-\alpha/2}\color{#6A5ACD}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \right) \approx 1-\alpha.$$`
+⚠️ .smallest[This means that a fraction of] `\(\small 100\times\alpha\)`.smallest[% of confidence intervals .hi.pink[don't include]] `\(\small p\)`. 
+
+---
+
+# Confidence Interval with `\(\alpha = 20\%\)`
+
+&lt;img src="pics/plot_alpha_20_40_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Confidence Interval with `\(\alpha = 20\%\)`
+
+&lt;img src="pics/plot_alpha_20_100_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Confidence Interval with `\(\alpha = 20\%\)`
+
+&lt;img src="pics/plot_alpha_20_200_voters.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Confidence Intervals with `\(\alpha = 20\%\)`
+
+.center[![](GIF/trump_no_test_alpha_20.gif)]
+
+---
+
+# Why is 20%? Why not 5%?
+
+.center[![](GIF/trump_no_test_alpha_05.gif)]
+
+---
+
+# What if I want to be certain? 😳
+
+.center[![](GIF/trump_no_test_alpha_certain.gif)]
+
+---
+
+# ⚠️ Take home message
+
+- Since the data is available through sampling, it is .hi-purple[random]. .pink[Therefore, a decision or prediction can never be made with certainty!]
+- The only certainty one can have is that, for example, a proportion will always be included in the interval from 0% to 100%. .hi-purple[However, this is neither informative nor useful] 🧐 and it does not even depend on the data.
+- There exists a trade-off between .hi-pink[risk] as measured by  1 - `\(\alpha\)` (typically 95%) the confidence level, and the .hi-pink[precision of the conclusion] as measured, for example, by the confidence interval length.
+- Moreover, the larger the sample size, the more precise the conclusion, for the same confidence level.
+- Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (e.g. safety in airplanes vs which soft drink tastes better).
+
+---
+
+# ⚠️ At the end it's a question of risk
+
+
+&lt;img src="pics/risk2.png" width="85%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/2333/)]
+
+---
+
+# How to test a (scientific) hypothesis?
+
+- .smaller[An alternative summary measure of uncertainty is provided  by .hi-pink[p-values] that take values between 0% and 100%. P-values are generally preferred than confidence intervals when we want to assess the validity of a statement.]
+- .smaller[However, .hi-purple[p-values have been misused] many times because understanding what they mean is not intuitive.]
+
+&lt;div align="center"&gt;
+   &lt;iframe width="560" height="315" src="https://fivethirtyeight.abcnews.go.com/video/embed/56150342" frameborder="0" allowfullscreen&gt;
+   &lt;/iframe&gt;
+&lt;/div&gt;
+
+👋 .smallest[If you want to know more have a look [here](https://fivethirtyeight.com/features/statisticians-found-one-thing-they-can-agree-on-its-time-to-stop-misusing-p-values/).]
+
+
+---
+
+# How to test a (scientific) hypothesis?
+
+- .smaller[A p-value is associated to a (couple of) .purple[hypotheses] about the phenomenon under investigation. For example, for the United States presidential election example, one hypothesis is that the majority votes for Biden's team, and the other one is that there is no majority (the YES and NO are both at 50%)]
+- .smaller[Each hypothesis .purple[excludes the other], so that one can .purple[exclude one in favor of the other] using the data.]
+- .smaller[The .purple[null hypothesis] is the one that one will never be able to prove because the data is random (i.e. the most precise hypothes is that the votes are 50%-50%.)]
+- .smaller[The .purple[alternative hypothesis] is the one that offers more choice of values and hence has a chance to be favored with respect to the null hypothesis (e.g. Biden's team receives more than 50% of the votes).]
+- .smaller[Informally, .hi-pink[a p-value can be understood as a measure of plausibility of the null hypothesis given the data]. The smaller the p-value the greater the incompatibility of the null hypothesis with the data.]
+
+---
+
+# Hypothesis testing
+
+- .smaller[When the p-value is small enough (typically smaller than 5%), one says that the test based on the null and alternative hypotheses is .hi-pink[significant] or that the null hypothesis is rejected in favor of the alternative. .purple[This is generally what we want because it "verifies" our (research) hypothesis].]
+- .smaller[When the p-value is not small enough (typically larger than 5%), with the available data, we cannot reject the null hypothesis and then .hi-pink[nothing] can be concluded. 🤔]
+- .smaller[With a sample of data, the obtained p-value (associated to a couple of hypotheses) summarizes somehow the .hi-pink[incompatibility between the data and the model] (random process) constructed under the set of assumptions.]
+- .smaller[The (sample) p-value is usually compared to a .pink[threshold value] that sets the (subjective) risk level of decision in favor of the incompatibility.]
+- .smaller[The risk level is called the .pink[significance level] and is a small value, usually 5%, but again this depends on the context.]
+
+---
+
+# Hypothesis testing
+
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Hypothesis testing
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Hypothesis testing
+
+&lt;img src="pics/gif_trump_p_hat_test_for_biden_3.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Hypothesis testing
+
+.center[![](GIF/gif_trump_p_hat_test_for_biden.gif)]
+
+---
+
+# Hypothesis testing
+
+.center[![](GIF/gif_trump_p_hat_test_for_trump.gif)]
+
+---
+
+# Hypothesis testing
+
+.center[![](GIF/trump_ts.gif)]
+
+---
+
+# What to remember about p-values
+
+- .smallest[A p-value is something .hi-pink[random] (i.e. a random variable), since its value depends on the data. Likewise, .pi-pink[confidence intervals are random], since their bounds depend on the data. In fact, .pink[p-value is highly related to the width of the corresponding confidence interval.] The narrower the confidence interval, the more likely that the true value is not included in the interval, and thus the smaller the p-value.]
+- .smallest[Hence it might happen that, while the null hypothesis cannot be rejected (supposing it is true), the p-value is smaller than the set threshold. With the latter chosen as 5% then, on average, the (sample) p-value is below 5% .purple[one out of twenty times!]]
+- .smallest[Hence .hi-pink[performing multiple tests, with the same or different data, is dangerous ⚠️] (but very common! 😟) as it automatically leads to .pink[significant results, when actually there are none!]]
+- .smallest[Confidence intervals and p-values can be used for many types of models, such as regression, correlation, and so on. Therefore, .purple[they can be used to assess the validity of most (scientific) hypotheses] (as discussed in your statistics classes! 🤓).]
+
+
+---
+
+# Why are there contradictory studies?
+
+.purple[Are jelly beans causing acne? Maybe... but why only green ones?] 🤨 
+
+&lt;img src="pics/green.png" width="45%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+---
+
+# Are jelly beans causing acne?
+
+&lt;br&gt;
+&lt;img src="pics/green1.png" width="85%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+---
+
+# Maybe a specific color?
+
+&lt;br&gt;
+&lt;img src="pics/green2.png" width="76%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+---
+
+# Maybe a specific color?
+
+&lt;br&gt;
+&lt;img src="pics/green3.png" width="75%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+---
+
+# And finally...
+
+&lt;img src="pics/green.png" width="45%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+
+👋 .smallest[If you want to know more about these comic strips take a look [here](https://www.explainxkcd.com/wiki/index.php/882:_Significant).]
+
+---
+
+# This is an example of "P-Hacking"
+
+.smallest[.hi-pink[P-Hacking] refers to the misuse of data analysis to find patterns in data that can be presented as statistically significant. .turquoise[This is done by performing many statistical tests on the data and only reporting those that come back with significant results]&lt;sup&gt;.smallest[👋]&lt;/sup&gt;. .hi-purple[Example]: a correlation between the number of letters in [Scripps National Spelling Bee's](https://en.wikipedia.org/wiki/Scripps_National_Spelling_Bee) winning word and the number of people in the United States killed by venomous spiders.]
+
+&lt;img src="pics/phacking.png" width="82%" style="display: block; margin: auto;" /&gt;
+
+.smallest[Source: [Wikipedia on Data dredging ](https://en.wikipedia.org/wiki/Data_dredging)]. 👋 .smallest[If you want to know more, take a look [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1124898/).]
+
+---
+
+# More on P-Hacking 
+
+&lt;!--
+&lt;div align="center"&gt;
+&lt;video width='95%'&gt;
+&lt;source src="video_compress/scientific_studies_john_oliver.mp4#t=209,242" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;/div&gt; 
+--&gt;
+
+&lt;!-- original youtube link --&gt;
+&lt;div align="center"&gt;
+&lt;iframe width="784" height="441" src="https://www.youtube.com/embed/0Rnq1NpHdmw?start=209&amp;end=242" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+.tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
+
+👋 .smallest[If you want to know more, take a look [here](https://fivethirtyeight.com/features/you-cant-trust-what-you-read-about-nutrition/).]
+
+---
+
+# How to P-Hack? 🤔
+
+.smaller[Are republicans good or bad for the American Economy? .hi-purple[Both!!] (see [link](https://projects.fivethirtyeight.com/p-hacking/))]
+
+&lt;img src="pics/republican.png" width="72%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# This brings us to "HARKing"
+
+.pull-left[.smallest[.hi-pink[HARKing] is an acronym coined by Norbert Kerr for the .purple[questionable research practice of "Hypothesizing After the Results are Known"]. It can be defined as presenting .hi-turquoise[a post hoc] hypothesis in the introduction of a research report as if it were an .hi-turquoise[a priori] hypothesis.
+
+.hi-pink[How to do it?] 🤔
+
+- Test if one jelly bean color is linked to acne.
+- Pretend this was our original hypothesis.
+- Et voilà!
+
+👋  If you want to know more, have a look [here](https://en.wikipedia.org/wiki/HARKing) and the references therein.]]
+
+
+.pull-right[
+&lt;br&gt;
+&lt;img src="pics/green.png" width="90%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+]
+
+---
+
+
+# The costs of HACKing (and P-Hacking)
+
+HARKing is (arguably) playing an important role in the .hi-purple[replication crisis in science]!  
+
+&lt;br&gt;
+&lt;img src="pics/replic.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+
+.tiny[Source: [Open Science Collaboration. "Estimating the reproducibility of psychological science." Science 349.6251 (2015)](https://science.sciencemag.org/content/sci/349/6251/aac4716.full.pdf?casa_token=2i_9tsA7a-QAAAAA:B-N4J8bk1hBRboZAmPKuythdhFcdhKKNOtBATZX1PD69qhV-cl1zZG3zcd25LkhnKMpRrmO9TJAxo3f8).]
+
+👋  .smallest[If you want to know more, take a look [here](https://en.wikipedia.org/wiki/Replication_crisis) and the references therein.]
+
+---
+
+# ⚠️ Take home message
+
+- Any data analysis made on a sample of data is subject to .purple[randomness].
+- Understanding the random processes underlying any data analysis (including underlying statistics such as confidence intervals and p-values) requires basic knowledge in probability and statistics, or .pink[statistical literacy].
+- With data, there is never 100% certainty, but rather a .pink[conclusion associated to a (estimated) risk] that the conclusion might be wrong. 
+- .pink[One has to live with this fact, and any scientific result that claims the validity of a result with 100% certainty on the basis of data, is simply a fallacy].
+- However, properly controlling for the statistical risk and properly stating the conclusions that can be drawn from a data analysis can really bring new knowledge, especially in all the sciences that are based on observations.
+
+---
+
+# Thank you very much for your attention
+
+.smallest[.center[All material is available on [GitHub](https://github.com/stephaneguerrier/StatLiteracy) at [https://github.com/stephaneguerrier/StatLiteracy](https://github.com/stephaneguerrier/StatLiteracy)]]
+
+&lt;br&gt;&lt;br&gt;
+&lt;img src="pics/green.png" width="37%" style="display: block; margin: auto;" /&gt;
+.tiny[Source: [xkcd](https://xkcd.com/882/)]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
