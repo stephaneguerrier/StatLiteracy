@@ -21,11 +21,11 @@ Zhang](https://github.com/Yuming-Zhang).
 Dr. [Ed Rubin](https://edrub.in)
 
 **[Lecture: Introduction to Statistical Literacy
-🤓](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2022_web.html)**
+🤓](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2023_web.html)**
 
 **Note formats:**
-[.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2022_web.html)
+[.html](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2023_web.html)
 \|
-[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2022_web.pdf)
+[.pdf](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2023_web.pdf)
 \|
-[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2022_web.Rmd)
+[.Rmd](https://raw.githack.com/stephaneguerrier/StatLiteracy/main/slides2023_web.Rmd)
