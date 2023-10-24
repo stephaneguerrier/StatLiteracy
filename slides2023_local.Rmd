@@ -2,7 +2,7 @@
 title: "Introduction to Statistical Literacy"
 subtitle: "Analyse et traitement de l’information \\  Comprendre le numérique"
 author: "Stéphane Guerrier"
-date: "23 Octobre 2023"
+date: "24 Octobre 2023"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
@@ -250,7 +250,7 @@ include_graphics("pics/sampling.png")
 - Statistics allows to determine the .hi-pink[decision-making risks] (in the form of probabilities) associated with learning (decisions) based on the analysis of data extracted from samples. .slate[This allows to evaluate the validity of a claim] (such as the ones we discussed previously). 
 - .purple[Understanding and knowing how to interpret statistical analyses is therefore becoming an increasingly vital skill].
 - In some sense, .hi-pink[statistics plays a crucial role in our life] as new discoveries (obtained using statistical methods) directly impact us<sup>.smallest[👋]</sup>.
-- However, understanding statistical results is not intuitive. There exist many pitfalls such as .purple[p-hacking] or .purple[HARKing] (e.g. why are there so many contradictory studies? Is Hydroxychloroquine working or not?).
+- However, understanding statistical results is not intuitive. There exist many pitfalls such as .purple[p-hacking] or .purple[HARKing] (e.g. why are there so many contradictory studies?).
 
 
 
@@ -326,16 +326,6 @@ include_graphics("pics/medical_studies2.png")
 <!-- </div> -->
 
 .tiny[Source: Scientific Studies: Last Week Tonight with John Oliver (HBO)]
-
----
-
-# The Hydroxychloroquine Controversy 🦠
-
-.smallest[Since the beginning of 2020, various research teams have suggested that (hydroxy)chloroquine combined with other drugs (e.g. azithromycin) is an .hi-pink[effective treatment] for the coronavirus disease 2019. Since then there have been .hi-purple[many many many contradictory publications] (and some [retractions](https://en.wikipedia.org/wiki/The_Lancet#Retracted_papers_and_scientific_controversies)!) and the efficacy of these drugs remains unclear. The timeline can be found [here](https://en.wikipedia.org/wiki/Chloroquine_and_hydroxychloroquine_during_the_COVID-19_pandemic).]
-
-```{R, fact, out.width = "70%", echo = F}
-include_graphics("pics/FACT.jpg")
-```
 
 ---
 
@@ -655,16 +645,6 @@ include_graphics("pics/plot_alpha_20_200_voters.png")
 - There exists a trade-off between .hi-pink[risk] as measured by  1 - $\alpha$ (typically 95%) the confidence level, and the .hi-pink[precision of the conclusion] as measured, for example, by the confidence interval length.
 - Moreover, the larger the sample size, the more precise the conclusion, for the same confidence level.
 - Therefore, .purple[every decision based on statistical methods has a risk and how much risk is acceptable depends on the context] (e.g. safety in airplanes vs which soft drink tastes better).
-
----
-
-# ⚠️ At the end it's a question of risk
-
-
-```{R, risk2, out.width = "85%", echo = F}
-include_graphics("pics/risk2.png")
-```
-.tiny[Source: [xkcd](https://xkcd.com/2333/)]
 
 ---
 
